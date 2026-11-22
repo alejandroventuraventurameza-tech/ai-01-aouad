@@ -36,4 +36,4 @@ latexmk -pdf -interaction=nonstopmode -halt-on-error presentation.tex
 - **Not certified:** dynamic paradoxes in Sections 3–5. The proof pertains to the static Section 2 only.
 - **Submission:** Perform structural CI, confirm the exact PR head and human-review disclosures, merge PR #1 to `main`, verify the result, and then post the repository link on Issue #6. The instructor's acceptance of iPad handwriting occurs during course review and is not an automated precondition to submitting the available evidence.
 
-This is a **scientifically verified static core**, not yet a completed assignment submission.
+The **static proof is scientifically and formally verified**. Delivery status is established separately by the merge and the link comment, not by the static theorem's compilation.
