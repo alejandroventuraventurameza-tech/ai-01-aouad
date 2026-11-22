@@ -31,3 +31,13 @@ The source of Proposition 2.1 uses concavity, continuity, monotonicity and a tai
 The [Lean run #44970575150](https://github.com/alejandroventuraventurameza-tech/ai-01-aouad/actions/runs/44970575150) completed successfully at SHA 9f08e3244dabfc2c3edf6f0a4fa58fb9f2a27993 (8,926 jobs). The three original declarations printed exactly [propext, Classical.choice, Quot.sound] as their axiom dependencies, and the separate axiom-audit step passed. There is no sorryAx in these declarations. This does **not** prove the paper's tail-regularity-to-existence implication.
 
 The **separately verified Jensen-concavity bridge** was compiled and axiom-audited on pinned [run #44970882111](https://github.com/alejandroventuraventurameza-tech/ai-01-aouad/actions/runs/44970882111), SHA `d57e87121153507f19238bcc16af5ff04c86ea94`, completing 8,927 jobs. `Aouad.netOutput_jensen_of_production_jensen`, `Aouad.rightTail_antitone_of_jensen` and `Aouad.selectedEffort_optimal_from_jensen` each report `[propext, Classical.choice, Quot.sound]`; no `sorryAx`. The automatic axiom audit examined nine declarations under `Aouad` and succeeded.
+
+
+## Existence and limsup candidates (not yet certified)
+
+- Aouad/GreatestMaximizer.lean attempts to prove existence of a **greatest global optimizer** under continuity and a strict right-tail bound. This makes the largest-argmax tie-break explicit using compactness.
+- Pinned CI #44971654295 and #44971943041 failed on proof elaboration errors, not on an established mathematical contradiction. The candidate was corrected in commit 18e810d8780c82b2baad3bb27445cbe5a0f19418 and is submitted to [run #44972209796](https://github.com/alejandroventuraventurameza-tech/ai-01-aouad/actions/runs/44972209796). Do not promote to DEMONSTRADO until the exact run succeeds with clean axioms.
+- Aouad/TailRegularity.lean attempts to turn a real-valued limsup gap into an eventual strict tail. It **retains an explicit eventual upper-boundedness premise** for p(x)/x. Its implication from concavity and p(0)>=0 is an additional proof obligation.
+- These new candidates are separate from the six prior kernel-verified conditional results. Full Proposition 2.1 is NOT YET kernel-certified under the source assumptions.
+
+**Planned proof sequence:** certify greatest optimizer from strict tail; certify strict tail from limsup; derive ratio boundedness from Jensen concavity; combine existence, effort optimality and gross output; audit exact axioms.
