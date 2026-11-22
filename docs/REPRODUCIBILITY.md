@@ -22,7 +22,7 @@ Each reports exactly the standard Lean/Mathlib axiom dependencies [propext, Clas
 
 ## Extended Jensen-concavity candidate
 
-The new Aouad/ConcavityBridge.lean at SHA d57e87121153507f19238bcc16af5ff04c86ea94 attempts to replace the assumed right-tail condition by an explicit Jensen concavity hypothesis. See [the separate pinned workflow #44970882111](https://github.com/alejandroventuraventurameza-tech/ai-01-aouad/actions/runs/44970882111). **Status cannot be upgraded without a completed success and axiom inspection.**
+The new Aouad/ConcavityBridge.lean at SHA d57e87121153507f19238bcc16af5ff04c86ea94 attempts to replace the assumed right-tail condition by an explicit Jensen concavity hypothesis. See [the separate pinned workflow #44970882111](https://github.com/alejandroventuraventurameza-tech/ai-01-aouad/actions/runs/44970882111). **SUCCESS / KERNEL-VERIFIED** in [run #44970882111](https://github.com/alejandroventuraventurameza-tech/ai-01-aouad/actions/runs/44970882111): 8,927 build jobs and explicit axiom audit of nine declarations. The three new Jensen bridge theorems have precisely `[propext, Classical.choice, Quot.sound]` dependencies. Their scope is conditional on a given nonnegative global maximizer; this does not certify its existence.
 
 ## Beamer checkpoint
 
