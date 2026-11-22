@@ -31,7 +31,7 @@ latexmk -pdf -interaction=nonstopmode -halt-on-error presentation.tex
 
 ## Non-formal obligations and release blockers
 
-- **Required academic record:** prompts.md is an explicit placeholder, not an authentic raw conversation; the copied instructor dialogue was removed from the branch.
+- **Required academic record:** [prompts.md](../prompts.md) now contains material copied directly by the student from prior conversations, including the mistaken initial identification of `ai-project` and the subsequent clarification. It explicitly omits some text, and [the ongoing RP4 ledger](RP4_CONVERSACION_EN_CURSO.md) includes the student's literal prompts but only an editorial summary of the assistant's replies. Thus **the complete raw, unedited-dialogue requirement is not yet demonstrably satisfied**. No instructor-template dialogue was represented as student-authored.
 - **Handwritten derivation supplied:** the complete original 7-page [iPad PDF](../hand/Prop_2_1_notas_ipad.pdf) received on 22 November 2026 is preserved unmodified (SHA-256 `bbcbd5d77f29b0befba8bdc9f151b3cb5abe96bf325bffa2bbb63b522258ba86`; Git blob `203e242e516022b63bd857f743b01542af918022`), alongside handwritten-page images 4 and 5 in [hand/](../hand/). Acceptance of digital handwriting is for the instructor to judge.
 - **Not certified:** dynamic paradoxes in Sections 3–5. The proof pertains to the static Section 2 only.
 - **Submission:** PR remains draft. No merge to main and no course Issue #6 link comment until the authentic student evidence and final integrity checks are complete.
