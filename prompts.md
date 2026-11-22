@@ -1,19 +1,21 @@
 # Registro de interacciones con ChatGPT — Repository 1
 
-**Estado: INCOMPLETO.** La consigna del [issue #6](https://github.com/alexanderquispe/AI-Econ-Modeling/issues/6) solicita los prompts y respuestas originales, sin editar. Este archivo no debe interpretarse como una transcripción íntegra.
+**Fuente primaria aportada por el estudiante:** el estudiante copió directamente en la conversación de trabajo un bloque con mensajes de RP1–RP3 y manifestó expresamente que ese era todo el material que deseaba aportar. No se le debe volver a pedir que copie las mismas conversaciones.
 
-## Evidencia disponible
+## Aclaración de contexto importante
 
-- [Extractos de RP3 aportados directamente por el estudiante](docs/EXTRACTOS_RP3_APORTADOS.md). Contienen tres intercambios seleccionados de la revisión del manuscrito de Proposition 2.1 y su incorporación a GitHub. El texto se copió de un mensaje proporcionado por el estudiante, no de una exportación verificable de los chats.
-- [Auditoría del PDF manuscrito](docs/REVIEW_IPAD_PDF.md): fuente y alcance de la comprobación matemática de la prueba escrita.
-- [Evidencia de formalización Lean](docs/LEAN_FORMAL_SCOPE.md): alcance de la verificación formal y límites.
+El inicio del material copiado registra una **confusión real de identificación del repositorio**: el asistente interpretó inicialmente «repositorio_1» como el proyecto `ai-project` y el issue #7. Posteriormente el estudiante aclaró que el proyecto correcto era **Repository 1 — Aouad, Lykouris & Zhong**, repositorio `ai-01-aouad` e issue #6. Ese episodio forma parte de la historia aportada y **no se debe borrar, separar como material ajeno ni utilizarlo como prueba de ejecución en este repositorio**.
 
-## Pendiente
+## Evidencia de diálogo conservada
 
-1. Recuperar los intercambios originales restantes de RP1, RP2 y RP3, con prompts y respuestas íntegros en orden, sin inventar mensajes ausentes.
-2. Revisar la privacidad antes de hacer público cualquier registro adicional.
-3. Auditar el material recibido contra los requisitos del curso.
+- [Registro del texto aportado de RP3](docs/EXTRACTOS_RP3_APORTADOS.md), con intervenciones relativas a la prueba manuscrita, su revisión y la incorporación del PDF.
+- [Revisión de las notas del iPad](docs/REVIEW_IPAD_PDF.md).
+- [Alcance exacto de la formalización Lean](docs/LEAN_FORMAL_SCOPE.md).
 
-El material de `ai-project` / issue #7 se excluye por ser una tarea diferente. Tampoco se reutiliza la conversación modelo del profesor como si fuera la del estudiante.
+## Alcance documental
 
-**No certificar la entrega académica ni fusionar el PR mientras falte la evidencia de conversación requerida.**
+El estudiante confirma que **ya copió todo el material que tenía previsto proporcionar**. Las partes guardadas como extractos en `docs/EXTRACTOS_RP3_APORTADOS.md` no son una transcripción técnica íntegra de las conversaciones: el registro derivado selecciona pasajes del texto entregado. Esta diferencia refleja una limitación de la **incorporación realizada por el asistente**, no un incumplimiento adicional que se deba atribuir al estudiante.
+
+La literalidad del bloque completo aportado y su traslado íntegro al repositorio aún requieren una comprobación documental. No se inventarán intervenciones ni se afirmará que las selecciones son una exportación completa. El siguiente paso es auditar y completar el traslado con el material **ya recibido**, no solicitar nuevamente al estudiante que lo copie.
+
+No sustituir los mensajes del estudiante por los del repositorio modelo del profesor.
