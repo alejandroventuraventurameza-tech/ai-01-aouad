@@ -49,12 +49,12 @@ Then $b=(1-t)x^\star+ty$, so concavity implies
 $$
 f(b)\geq(1-t)f(x^\star)+t f(y).
 $$
-By global optimality $f(x^\star)\geq f(b)$; hence
-$$
-f(b)\geq (1-t)f(b)+t f(y)
-\quad\Rightarrow\quad f(b)\geq f(y).
-$$
-In fact $f(x^\star)>f(y)$ because $y>x^\star$ and $x^\star$ is the **largest** global maximizer. Thus $f(b)>f(y)$; $b$ is the unique constrained maximizer and
+Because $b>x^\star$ and $x^\star$ is the **largest** global maximizer, $f(x^\star)>f(b)$. Combining this *strict* inequality with concavity,
+$
+f(b)\geq(1-t)f(x^\star)+tf(y)
+\;>\;(1-t)f(b)+tf(y).
+$
+Since $t>0$, it follows that $f(b)>f(y)$ for every $y>b$. Thus $b$ is the unique constrained maximizer and
 $$
 e^\star=0.
 $$
