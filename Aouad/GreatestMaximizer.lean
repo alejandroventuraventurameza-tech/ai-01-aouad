@@ -35,7 +35,11 @@ theorem exists_greatest_global_maximizer_of_strict_tail
   have hsClosed : IsClosed s := by
     have h : IsClosed (Set.Icc (0 : ℝ) R ∩ f ⁻¹' {f x0}) :=
       isClosed_Icc.inter (isClosed_singleton.preimage hf)
-    simpa only [s, Set.inter_def, Set.preimage, Set.mem_singleton_iff] using h
+    have hsEq : s = Set.Icc (0 : ℝ) R ∩ f ⁻¹' {f x0} := by
+      ext x
+      simp [s]
+    rw [hsEq]
+    exact h
   have hsCompact : IsCompact s :=
     isCompact_Icc.of_isClosed_subset hsClosed (by
       intro x hx
@@ -43,10 +47,10 @@ theorem exists_greatest_global_maximizer_of_strict_tail
   have hsNonempty : s.Nonempty := ⟨x0, hx0, rfl⟩
   obtain ⟨xStar, hxStar, hgreat⟩ :=
     hsCompact.exists_isMaxOn hsNonempty continuous_id.continuousOn
-  have hZeroMax : f 0 ≤ f x0 := hmax0 0 ⟨le_rfl, le_of_lt hR⟩
+  have hZeroMax : f 0 ≤ f x0 := hmax0 (show (0 : ℝ) ∈ Set.Icc 0 R from ⟨le_rfl, le_of_lt hR⟩)
   have hAll (x : ℝ) (hx : 0 ≤ x) : f x ≤ f x0 := by
     by_cases hXR : x ≤ R
-    · exact hmax0 x ⟨hx, hXR⟩
+    · exact hmax0 (show x ∈ Set.Icc 0 R from ⟨hx, hXR⟩)
     · have hRX : R ≤ x := le_of_lt (lt_of_not_ge hXR)
       exact (hTail x hRX).le.trans hZeroMax
   refine ⟨xStar, hxStar.1.1, ?_, ?_⟩
@@ -62,7 +66,7 @@ theorem exists_greatest_global_maximizer_of_strict_tail
       exact (not_lt_of_ge hZeroMax) hbad
     have hmem : x ∈ s := ⟨⟨hx, hxR⟩, by
       rw [hEq, hxStar.2]⟩
-    simpa only [id_eq] using hgreat x hmem
+    simpa only [id_eq] using hgreat hmem
 
 end Aouad
 
