@@ -66,7 +66,7 @@ theorem exists_greatest_global_maximizer_of_strict_tail
       exact (not_lt_of_ge hZeroMax) hbad
     have hmem : x ∈ s := ⟨⟨hx, hxR⟩, by
       rw [hEq, hxStar.2]⟩
-    simpa only [id_eq] using hgreat hmem
+    simpa only [Set.mem_setOf_eq, id_eq] using hgreat hmem
 
 end Aouad
 
