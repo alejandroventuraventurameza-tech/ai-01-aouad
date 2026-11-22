@@ -36,11 +36,30 @@ def inspect(root: Path) -> dict:
     prompt_looks_filled = (
         len(prompt_text) > 300
         and not any(word in prompt_text.lower() for word in placeholders)
+        and "### Usuario" in prompt_text
+        and "### Asistente" in prompt_text
     )
     record(
-        "raw_dialogue_present_for_human_review",
+        "dialogue_material_present_for_human_review",
         prompt_looks_filled,
-        "Passing this text check never proves authenticity: compare with actual chat export.",
+        "Original student-supplied dialogue material is present. This does NOT prove it is complete or unedited.",
+    )
+    # Positive textual existence checks cannot certify the course's stronger
+    # raw-and-unedited requirement. Recognise explicit disclosures of gaps.
+    disclosed_gaps = (
+        "no se han copiado completos",
+        "no es una transcripción íntegra",
+        "no es una exportación",
+        "no se han copiado completos aquí",
+        "no se atribuyen fechas individuales",
+    )
+    transcript_declares_gaps = any(marker in prompt_text.lower() for marker in disclosed_gaps)
+    record(
+        "full_unedited_dialogue_release_gate",
+        prompt_looks_filled and not transcript_declares_gaps,
+        "Requires manually cross-checking ALL user and assistant messages. "
+        + ("The supplied transcript explicitly discloses gaps." if transcript_declares_gaps
+           else "No gap disclaimer found; passing still needs human verification."),
     )
 
     hand_dir = root / "hand"
