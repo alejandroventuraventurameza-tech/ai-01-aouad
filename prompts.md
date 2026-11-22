@@ -1,6 +1,6 @@
 # Registro de uso de ChatGPT — Repository 1 (Aouad, Lykouris & Zhong)
 
-**Fuente:** transcripción copiada y pegada por el estudiante en el chat RP4 el 22 de noviembre de 2026. El bloque proporcionado incluye los mensajes que siguen, con algunas expresiones matemáticas visualmente descompuestas por el pegado y sin metadatos de exportación. No se atribuyen fechas individuales ni se inventan intervenciones. La transcripción inicial contiene una confusión de proyecto del asistente que luego quedó aclarada.
+**Fuente:** texto de diálogos copiado por el estudiante en RP4 el 22 de noviembre de 2026. Se conservan los prompts utilizados y respuestas relevantes sin editar su sustancia; el formato matemático conserva los saltos y duplicaciones propios de la copia. No es una exportación automática ni una transcripción exhaustiva de todos los chats. El error inicial del asistente sobre la identidad del repositorio y la aclaración posterior se mantienen.
 
 ## 1. Inicio del historial aportado: identificación equivocada del proyecto
 
@@ -190,26 +190,69 @@ He completado esta primera auditoría sin modificar archivos, iniciar compilacio
 
 Una precisión: el mensaje recuperable de «repositorio_1» no identificaba expresamente el repositorio. He tomado ai-project como referencia porque coincide con el proyecto Lean de tu GitHub. Si «repositorio_1» correspondía a otra tarea, bastará con identificarla para cambiar el objetivo sin alterar este proyecto.
 
-## 2. Revisión de la prueba escrita: interacciones copiadas por el estudiante
+## 2. Conversaciones sobre la prueba manuscrita (texto aportado por el estudiante)
+
+Se reproducen los **prompts y respuestas relevantes sin corregir las expresiones matemáticas descompuestas en el mensaje copiado**. Se conserva también la copia [separada](docs/RP3_INTERCAMBIOS_CRUDOS.md) para auditoría de procedencia. No equivale a una exportación de todos los chats.
+
+## Intercambio 1: primera revisión
 
 ### Usuario
+
+~~~text
 Prop_2_1_notas.pdf
 PDF
 Aquí está hecho desde mi ipad
+~~~
 
 ### Asistente
+
+~~~text
 He revisado las seis páginas de tu archivo Prop_2_1_notas.pdf.
 
-La demostración matemática está bien desarrollada. Incluye la existencia de x⋆, la regla de desempate, el cambio de variable, los dos casos de optimización y la fórmula de productividad. En particular, el argumento de concavidad de la página 4 justifica correctamente por qué el esfuerzo óptimo es cero cuando s+a>x⋆.
+La demostración matemática está bien desarrollada. Incluye la existencia de 
+x
+⋆
+x 
+⋆
+ , la regla de desempate, el cambio de variable, los dos casos de optimización y la fórmula de productividad. En particular, el argumento de concavidad de la página 4 justifica correctamente por qué el esfuerzo óptimo es cero cuando 
+s
++
+a
+>
+x
+⋆
+s+a>x 
+⋆
+ .
 
 Encontré dos ajustes pequeños:
 
-Página 3: el caso s+a≤x⋆ no siempre es una solución interior. Cuando hay igualdad, e⋆=0, así que conviene titularlo «Caso 1: x⋆ es factible».
+Página 3: el caso 
+s
++
+a
+≤
+x
+⋆
+s+a≤x 
+⋆
+  no siempre es una solución interior. Cuando hay igualdad, 
+e
+⋆
+=
+0
+e 
+⋆
+ =0, así que conviene titularlo «Caso 1: 
+x
+⋆
+x 
+⋆
+  es factible».
 
 Página 6: dice que la demostración no está verificada en Lean. Esa información ya quedó desactualizada: verificamos la formalización de la Proposición 2.1 mediante GitHub Actions #44972813354.
 
 Sobre el requisito manuscrito
-
 Hay una distinción importante: aunque preparaste el documento desde tu iPad, el PDF utiliza tipografías digitales que imitan la escritura manual, en lugar de contener una fotografía de trazos manuscritos. Por eso no puedo dar por cumplido todavía el requisito del profesor.
 
 La solución es sencilla: escribe con el Apple Pencil, sin conversión a tipografía, la demostración del caso de esquina de la página 4 y comparte una imagen de esa página. No necesitas volver a escribir las seis.
@@ -217,23 +260,63 @@ La solución es sencilla: escribe con el Apple Pencil, sin conversión a tipogra
 He registrado la revisión y las dos observaciones en docs/REVIEW_IPAD_PDF.md. El PDF original sigue disponible aquí; no lo he modificado ni subido como evidencia manuscrita.
 
 El PR #1 continúa abierto como borrador, mientras completamos esa evidencia y prompts.md.
+~~~
+
+## Intercambio 2: corrección del manuscrito
 
 ### Usuario
+
+~~~text
 Prop_2_1_notas.pdf
 PDF
 
 Prop_2_1_notas(3).pdf
 PDF
 Revisión de la nueva versión
+~~~
 
 ### Asistente
+
+~~~text
 Ahora sí: esta versión incorpora escritura manual en las páginas 4 y 5. He comprobado que contienen imágenes de tus trazos, a diferencia de las páginas mecanografiadas de apoyo.
 
-La demostración del caso de esquina es correcta. En particular, utilizas la concavidad y el hecho de que x⋆ es el mayor maximizador global para demostrar que
+La demostración del caso de esquina es correcta. En particular, utilizas la concavidad y el hecho de que 
+x
+⋆
+x 
+⋆
+  es el mayor maximizador global para demostrar que
 
-f(b)>f(y) para todo y>b>x⋆.
-
-Esto justifica que b sea el único maximizador restringido y, por tanto, que e⋆=0.
+f
+(
+b
+)
+>
+f
+(
+y
+)
+para todo 
+y
+>
+b
+>
+x
+⋆
+.
+f(b)>f(y)para todo y>b>x 
+⋆
+ .
+Esto justifica que 
+b
+b sea el único maximizador restringido y, por tanto, que 
+e
+⋆
+=
+0
+e 
+⋆
+ =0.
 
 Estas dos páginas aportan la evidencia manuscrita que faltaba. El requisito del profesor admite una fotografía de una comprobación hecha a mano; no exige reescribir toda la demostración.
 
@@ -247,35 +330,50 @@ Página 5: desigualdad estricta y conclusión
 
 La auditoría de entrega #45067755831 terminó correctamente y ya reconoce ambas imágenes en hand/. La aceptación definitiva de escritura manual realizada en iPad corresponde al profesor.
 
-También actualicé el PR #1 y documenté dos ajustes editoriales menores: el caso b=x⋆ no es estrictamente interior, y la página 7 conserva una referencia desactualizada sobre Lean.
+También actualicé el PR #1 y documenté dos ajustes editoriales menores: el caso 
+b
+=
+x
+⋆
+b=x 
+⋆
+  no es estrictamente interior, y la página 7 conserva una referencia desactualizada sobre Lean.
 
 Ahora solo queda pendiente prompts.md: incorporar los intercambios auténticos con el modelo. Hasta entonces, el PR permanece en borrador y no se ha publicado la entrega en el Issue #6.
 
 Conservé sin modificar tu PDF original de siete páginas.
+~~~
+
+## Intercambio 3: incorporación del PDF completo
 
 ### Usuario
+
+~~~text
 Prop_2_1_notas(3).pdf
 PDF
 Ok, incorporalo.
+~~~
 
 ### Asistente
+
+~~~text
 He comprobado que el archivo Prop_2_1_notas(3).pdf contiene siete páginas y que la copia binaria transferida a GitHub coincide exactamente con el original. La verificación se realizó mediante su identificador Git, sin modificar el documento.
 
 Lo incorporaré como PDF completo en hand/, junto a las dos páginas manuscritas que ya estaban registradas.
 
 El PDF completo ya está incorporado a GitHub, en la rama de trabajo del PR #1.
 
-Ver las siete páginas originales
+ Ver las siete páginas originales
 
 También actualicé el README.md, la revisión matemática y el registro de reproducibilidad. El archivo se conserva sin modificaciones y su integridad quedó verificada.
 
 Auditoría de entrega #45068194106
 
 Ejecutada
-
 La auditoría confirma que las páginas manuscritas están presentes, junto con la presentación y el código. El único requisito documental pendiente es prompts.md, que debe contener la conversación auténtica.
 
 El PR #1 sigue abierto como borrador. No he modificado main ni publicado todavía la entrega en el Issue #6.
+~~~
 
 ## 3. Aclaración posterior del estudiante
 
@@ -283,13 +381,14 @@ El estudiante explicó expresamente: «Pero, ya te copie todo. Esa confusion de 
 
 Por tanto, el relato de `ai-project` al inicio es un error de identificación durante la conversación. El repositorio de entrega pertinente es `alejandroventuraventurameza-tech/ai-01-aouad`, issue #6.
 
-## 4. Alcance y límites de esta transcripción
+## 4. Alcance de este registro frente a la guía del curso
 
-Esta versión incorpora el **texto disponible copiado por el estudiante**, sin pretender que sea una exportación automática íntegra de los chats. Los dos tramos extensos de respuesta acerca de `ai-project`, que anteriormente estaban abreviados por este asistente, han sido repuestos a partir de lo que copió el estudiante. Aun así, **este archivo no es una exportación íntegra de los chats RP1–RP3** y algunas expresiones matemáticas originalmente pegadas fueron normalizadas para lectura; no afirmar integridad literal estricta. La evidencia del estudio de Aouad que fue compartida está recogida en la sección 2. Las conversaciones originales RP1–RP3 pueden incluir intercambios que no están en el bloque facilitado. No se inventan mensajes para llenar huecos.
+La [guía oficial](https://github.com/alexanderquispe/AI-Econ-Modeling/blob/main/syllabus/repository-guide.md) solicita **los prompts utilizados y las respuestas relevantes, raw**, no la exportación íntegra de todas las conversaciones. Este archivo reproduce el episodio inicial de confusión de repositorio y **tres intercambios relevantes de revisión del manuscrito** aportados directamente por el estudiante. No los corrige ni los sustituye por la plantilla del profesor.
 
-Documentación complementaria: [revisión del manuscrito](docs/REVIEW_IPAD_PDF.md), [formalización](docs/LEAN_FORMAL_SCOPE.md), [extractos originales aportados](docs/EXTRACTOS_RP3_APORTADOS.md).
+La fuente es una copia pegada por el estudiante, no un volcado técnico de ChatGPT. Su autoría y fidelidad frente al chat original no pueden certificarse automáticamente. El profesor evaluará la entrega con esta procedencia explícita.
 
+Documentación complementaria: [revisión del manuscrito](docs/REVIEW_IPAD_PDF.md), [formalización](docs/LEAN_FORMAL_SCOPE.md), [copia cruda separada](docs/RP3_INTERCAMBIOS_CRUDOS.md).
 
 ## 5. RP4: conversación actual (22 de noviembre de 2026)
 
-La conversación actual también forma parte de la evidencia del uso de IA. Véase [registro RP4 en curso](docs/RP4_CONVERSACION_EN_CURSO.md), que preserva literalmente los prompts del estudiante visibles aquí y describe por separado las acciones del asistente. **No es una transcripción íntegra de ambas partes**: RP4 continúa abierta y el registro debe cerrarse antes de certificar cumplimiento estricto de la exigencia de diálogo sin editar.
+La conversación actual también se documenta como evidencia adicional en [RP4 en curso](docs/RP4_CONVERSACION_EN_CURSO.md). Allí se identifican los mensajes originales visibles del estudiante y los resúmenes editoriales de las respuestas del asistente. No se presenta ese anexo como diálogo literal completo y no sustituye los tres intercambios relevantes recogidos arriba.
