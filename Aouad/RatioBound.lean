@@ -28,6 +28,7 @@ theorem ratio_isBoundedUnder_of_jensen
   have hnonneg : 0 ≤ (1 - (1 / x : ℝ)) * p 0 :=
     mul_nonneg (sub_nonneg.mpr ht1) hp0
   have hdiv : p x / x = (1 / x) * p x := by ring
+  change p x / x ≤ p 1
   rw [hdiv]
   linarith
 
