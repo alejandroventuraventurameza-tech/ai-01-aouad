@@ -1,0 +1,35 @@
+name: Lean 4 — Proposition 2.1 conditional checks
+
+on:
+  push:
+    branches:
+      - work/repository1-proposition21-audit
+    paths:
+      - Aouad.lean
+      - Aouad/**
+      - lean-toolchain
+      - lakefile.toml
+      - .github/workflows/lean.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lean:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - name: Lean + Mathlib, build and axiom audit
+        uses: leanprover/lean-action@v1.7.1
+        env:
+          LEAN_NUM_THREADS: "1"
+        with:
+          auto-config: false
+          build: true
+          test: false
+          lint: false
+          mk_all-check: false
+          axiom-audit: true
+          axiom-audit-root: Aouad
