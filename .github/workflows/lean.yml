@@ -9,6 +9,7 @@ on:
       - Aouad/**
       - lean-toolchain
       - lakefile.toml
+      - lake-manifest.json
       - .github/workflows/lean.yml
   workflow_dispatch:
 
@@ -18,10 +19,18 @@ permissions:
 jobs:
   lean:
     runs-on: ubuntu-latest
-    timeout-minutes: 35
+    timeout-minutes: 40
     steps:
       - uses: actions/checkout@v4
-      - name: Lean + Mathlib, build and axiom audit
+      - name: Install Elan to initialize the Lake workspace
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Generate the pinned Mathlib dependency manifest
+        run: |
+          lake update
+          test -s lake-manifest.json
+      - name: Lean + Mathlib build and axiom audit
         uses: leanprover/lean-action@v1.7.1
         env:
           LEAN_NUM_THREADS: "1"
