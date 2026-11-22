@@ -69,4 +69,4 @@
 
 ## Limitación de integridad
 
-El estudiante indicó expresamente que ya aportó todo el texto que tenía previsto copiar. La presente selección solo transcribe algunos fragmentos de ese bloque: **la selección incompleta es responsabilidad de esta incorporación al repositorio**, y no implica que el estudiante deba volver a proporcionar los mensajes. Se deben conservar tanto el episodio de confusión inicial como su aclaración posterior en cualquier registro integral.
+El estudiante indicó expresamente que ya aportó todo el texto que tenía previsto copiar. La presente selección corta solo transcribe algunos fragmentos, pero **los tres intercambios pertinentes completos del bloque pegado** se preservan ahora en [RP3_INTERCAMBIOS_CRUDOS.md](RP3_INTERCAMBIOS_CRUDOS.md) y [prompts.md](../prompts.md). Las selecciones previas son responsabilidad de la incorporación realizada por el asistente y no implican que el estudiante deba volver a proporcionar los mensajes. Se conservó el episodio inicial de confusión y su aclaración posterior.
