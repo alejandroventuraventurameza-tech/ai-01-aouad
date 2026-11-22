@@ -4,7 +4,7 @@
 **Assigned source:** [arXiv:2605.11350v1 (12 May 2026)](https://arxiv.org/pdf/2605.11350v1).  
 **Later revision:** [arXiv:2605.11350v2 (17 October 2026)](https://arxiv.org/pdf/2605.11350v2).
 
-> **DRAFT — PROVENANCE WARNING:** This repository was initialized from the [instructor's worked example](https://github.com/alexanderquispe/ai-01-aouad). The original instructor prompts and handwritten PDF have been removed from this branch; placeholders now mark the missing student evidence. The inherited paper/ and extra/ folders remain **instructor reference materials**, not student-authored work. An original Beamer source has been written, and its compiled PDF is being replaced. Do not merge or submit until the actual raw conversation and handwritten derivation are supplied and checked.
+> **DRAFT — PROVENANCE WARNING:** This repository was initialized from the [instructor's worked example](https://github.com/alexanderquispe/ai-01-aouad). The original instructor prompts and handwritten PDF have been removed from this branch; placeholders now mark the missing student evidence. The inherited paper/ and extra/ folders remain **instructor reference materials**, not student-authored work. An original Beamer source and its compiled PDF have replaced the instructor slides on this branch. Do not merge or submit until the actual raw conversation and handwritten derivation are supplied and checked.
 
 ## Research question
 
@@ -38,6 +38,16 @@ $$
 
 **Interpretation:** Effort falls one-for-one as skill plus assistance approaches the target; output is initially constant, then weakly increasing. This baseline *does not itself* establish a productivity paradox.
 
+
+
+## Formal verification: Proposition 2.1
+
+The [Lean 4 proof](Aouad/RatioBound.lean) now establishes the existence of a greatest global maximizer, optimality of the positive-part effort rule for all nonnegative skill/assistance/effort, and the gross-output identity. Its top-level declaration is **Aouad.proposition21_from_limsup_and_jensen**. It assumes continuity of p, Jensen concavity and monotonicity for nonnegative inputs, p(0) >= 0, and the real-valued Filter.limsup ratio gap. The proof itself establishes the ratio's eventual upper bound from Jensen concavity, rather than assuming it.
+
+**Evidence:** [GitHub Actions Lean #44972813354](https://github.com/alejandroventuraventurameza-tech/ai-01-aouad/actions/runs/44972813354), SHA 482c2cf9291fa5b626ccf7a17660804db18ac095, **SUCCESS**; 8,930 jobs; axiom-audit of 14 declarations; only [propext, Classical.choice, Quot.sound] as dependencies, no sorryAx. See [formal ledger](docs/LEAN_FORMAL_SCOPE.md) and [reproducibility record](docs/REPRODUCIBILITY.md).
+
+This result formalizes the static Proposition 2.1, **not** the long-run deskilling, unreliability or polarization results in Sections 3–5. A finished mathematical proof also does not replace the course's student-authored raw prompts and handwritten work.
+
 ## Broader mechanisms — reading only
 
 - **§3:** effort-dependent skill accumulation (birth–death process) can produce long-run deskilling.
@@ -51,11 +61,11 @@ No attempt is made here to reproduce the theorems of §§3–5. See [version-awa
 | Deliverable | Status |
 |---|---|
 | README with model and core result | Draft complete |
-| Independent typed proof (docs/) | Draft complete; not Lean-certified |
+| Independent typed proof (docs/) | Complete for Proposition 2.1; independently reconstructed, with the exact kernel-checked counterpart described below |
 | Raw student dialogue (prompts.md) | **Missing: file now contains an explicit authentic-export placeholder** |
 | Student's physical handwritten derivation (hand/) | **Missing: copied PDF removed; hand/README.md specifies the required work** |
 | Original Beamer presentation.tex and compiled presentation.pdf | **Verified: GitHub Actions [run #44970668988](https://github.com/alejandroventuraventurameza-tech/ai-01-aouad/actions/runs/44970668988) compiled six slides and committed the PDF** |
-| Optional Lean 4 proof | **Six conditional results verified, including Jensen concavity bridge; [run #44970882111](https://github.com/alejandroventuraventurameza-tech/ai-01-aouad/actions/runs/44970882111) succeeded with no sorryAx. Existence/selection of $x^\star$ remains pending.** |
+| Lean 4 proof of Section 2 | **Verified:** [run #44972813354](https://github.com/alejandroventuraventurameza-tech/ai-01-aouad/actions/runs/44972813354), theorem proposition21_from_limsup_and_jensen; 8,930 jobs, 14 declarations audited, no sorryAx |
 | Branch → PR → merge / comment on Issue #6 | PR is draft; not submitted |
 
 ## Evidence rules
