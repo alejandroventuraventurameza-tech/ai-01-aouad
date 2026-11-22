@@ -11,3 +11,8 @@ For the assignment's required original evidence, add a photograph or PDF of your
 5. Conclude the selected effort and gross productivity formulas.
 
 **Do not substitute a generated image, typeset derivation, or an instructor's notebook for your own physical handwriting.** The typed mathematical details are in ../docs/PROPOSITION_2_1_PROOF_AUDIT.md.
+
+
+## Nota sobre los apuntes digitales recibidos
+
+El estudiante ha enviado `Prop_2_1_notas.pdf` (6 páginas) y su contenido matemático fue revisado. El archivo usa tipografías digitales de apariencia manuscrita, de modo que **no se registra todavía como evidencia fotográfica de escritura a mano**. Véase [la revisión detallada](../docs/REVIEW_IPAD_PDF.md). Falta al menos una imagen JPG/PNG de trazos realmente escritos a mano por el estudiante; se recomienda documentar el caso de esquina de la página 4.
