@@ -1,1 +1,1 @@
-import Aouad.GreatestMaximizer
+import Aouad.TailRegularity
