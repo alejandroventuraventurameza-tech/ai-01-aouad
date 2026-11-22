@@ -144,3 +144,8 @@ Por tanto, el relato de `ai-project` al inicio es un error de identificación du
 Esta versión incorpora el **texto disponible copiado por el estudiante**, sin pretender que sea una exportación automática íntegra de los chats. Los tramos extensos de respuesta acerca de `ai-project` se indican como tales y **no se han copiado completos aquí**: por esa razón este archivo todavía no satisface una exigencia estricta de diálogo íntegro sin ediciones. La evidencia del estudio de Aouad que fue compartida está recogida en la sección 2. Las conversaciones originales RP1–RP3 pueden incluir intercambios que no están en el bloque facilitado. No se inventan mensajes para llenar huecos.
 
 Documentación complementaria: [revisión del manuscrito](docs/REVIEW_IPAD_PDF.md), [formalización](docs/LEAN_FORMAL_SCOPE.md), [extractos originales aportados](docs/EXTRACTOS_RP3_APORTADOS.md).
+
+
+## 5. RP4: conversación actual (22 de noviembre de 2026)
+
+La conversación actual también forma parte de la evidencia del uso de IA. Véase [registro RP4 en curso](docs/RP4_CONVERSACION_EN_CURSO.md), que preserva literalmente los prompts del estudiante visibles aquí y describe por separado las acciones del asistente. **No es una transcripción íntegra de ambas partes**: RP4 continúa abierta y el registro debe cerrarse antes de certificar cumplimiento estricto de la exigencia de diálogo sin editar.
