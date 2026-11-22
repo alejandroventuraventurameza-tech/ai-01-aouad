@@ -53,12 +53,29 @@ def inspect(root: Path) -> dict:
         "no se han copiado completos aquí",
         "no se atribuyen fechas individuales",
     )
-    transcript_declares_gaps = any(marker in prompt_text.lower() for marker in disclosed_gaps)
+    rp4_path = root / "docs" / "RP4_CONVERSACION_EN_CURSO.md"
+    rp4_text = rp4_path.read_text(encoding="utf-8") if rp4_path.exists() else ""
+    record(
+        "rp4_conversation_material_present_for_review",
+        "Sigue el chat de RP3" in rp4_text and "Recuerda que tenemos que incorporar este chat" in rp4_text,
+        "The current RP4 chat must be recorded alongside the earlier dialogues.",
+    )
+    rp4_gaps = (
+        "resumen editorial",
+        "no es una transcripción",
+        "conversación abierta",
+        "todavía no es una exportación",
+    )
+    transcript_declares_gaps = (
+        any(marker in prompt_text.lower() for marker in disclosed_gaps)
+        or any(marker in rp4_text.lower() for marker in rp4_gaps)
+        or not rp4_text
+    )
     record(
         "full_unedited_dialogue_release_gate",
         prompt_looks_filled and not transcript_declares_gaps,
-        "Requires manually cross-checking ALL user and assistant messages. "
-        + ("The supplied transcript explicitly discloses gaps." if transcript_declares_gaps
+        "Requires manually cross-checking ALL user and assistant messages, including RP4. "
+        + ("The supplied dialogue records explicitly disclose gaps." if transcript_declares_gaps
            else "No gap disclaimer found; passing still needs human verification."),
     )
 
