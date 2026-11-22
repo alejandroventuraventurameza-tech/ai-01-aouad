@@ -32,7 +32,7 @@ latexmk -pdf -interaction=nonstopmode -halt-on-error presentation.tex
 ## Non-formal obligations and release blockers
 
 - **Required academic record:** prompts.md is an explicit placeholder, not an authentic raw conversation; the copied instructor dialogue was removed from the branch.
-- **Required handwritten work:** hand/README.md explains the expected original derivation; the instructor's scanned notebook was removed from this branch.
+- **Handwritten derivation supplied:** the user provided a seven-page iPad PDF on 22 November 2026; original-pen-stroke images from pages 4 and 5 are committed to [hand/](../hand/), with source and conversion hashes in [hand/README.md](../hand/README.md). Acceptance of digital handwriting is for the instructor to judge.
 - **Not certified:** dynamic paradoxes in Sections 3–5. The proof pertains to the static Section 2 only.
 - **Submission:** PR remains draft. No merge to main and no course Issue #6 link comment until the authentic student evidence and final integrity checks are complete.
 

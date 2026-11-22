@@ -1,18 +1,17 @@
-# Student handwritten derivation — required evidence
+# Evidencia manuscrita — Proposición 2.1
 
-**Status: PENDING.** The instructor-template handwritten PDF has been removed from this working branch because it was not created by the student. It is still available in the original worked-example repository for reference.
+**Estado: recibida y revisada en cuanto a contenido.** El estudiante aportó el 22 de noviembre de 2026 el documento `Prop_2_1_notas(3).pdf` de **7 páginas**. Sus páginas **4 y 5** contienen trazos de escritura manual en iPad incorporados como imágenes, y no texto de tipografía manuscrita.
 
-For the assignment's required original evidence, add a photograph or PDF of your own actual handwritten derivation here. One sheet is sufficient if it contains:
+- [prop-2-1-ipad-p4.png](prop-2-1-ipad-p4.png): caso de esquina `b > x*`, elección de `y > b`, parámetro `t` y desigualdad por concavidad.
+- [prop-2-1-ipad-p5.png](prop-2-1-ipad-p5.png): uso del **mayor maximizador**, deducción estricta `f(b)>f(y)` y `e*=0`.
 
-1. Define $b=s+a$ and $f(x)=p(x)-\gamma x$.
-2. Rewrite the worker's objective as $f(b+e)+\gamma b$.
-3. Split into $b\leq x^\star$ and $b>x^\star$.
-4. For the corner case, give a concavity inequality with $b=(1-t)x^\star+ty$, $y>b$ and $0<t<1$. Use the **largest-argmax** convention to justify strict decrease beyond $x^\star$.
-5. Conclude the selected effort and gross productivity formulas.
+Ambas imágenes son **conversiones optimizadas del documento enviado**, reducidas de resolución y paletizadas para hacer viable el almacenamiento. No son reproducciones dibujadas o generadas artificialmente. **No son los bytes originales** del PDF. El documento recibido tenía SHA-256:
+`bbcbd5d77f29b0befba8bdc9f151b3cb5abe96bf325bffa2bbb63b522258ba86`.
 
-**Do not substitute a generated image, typeset derivation, or an instructor's notebook for your own physical handwriting.** The typed mathematical details are in ../docs/PROPOSITION_2_1_PROOF_AUDIT.md.
+SHA-256 de las imágenes en GitHub:
+- página 4: `ae8532d3613e6dbde776e464d09cf60e504588a754868be859fc01f7e82ff70f`
+- página 5: `2ec0d49b83add04c5b526700450371ab44033e8e415f57247364da89f60c1ebe`
 
+El usuario indicó que las notas se hicieron en iPad. Esta comprobación de integridad visual y matemática no permite demostrar forénsicamente la autoría; corresponde al profesor decidir la aceptación de evidencia manuscrita digital conforme a su guía.
 
-## Nota sobre los apuntes digitales recibidos
-
-El estudiante ha enviado `Prop_2_1_notas.pdf` (6 páginas) y su contenido matemático fue revisado. El archivo usa tipografías digitales de apariencia manuscrita, de modo que **no se registra todavía como evidencia fotográfica de escritura a mano**. Véase [la revisión detallada](../docs/REVIEW_IPAD_PDF.md). Falta al menos una imagen JPG/PNG de trazos realmente escritos a mano por el estudiante; se recomienda documentar el caso de esquina de la página 4.
+La [revisión por página](../docs/REVIEW_IPAD_PDF.md) documenta las correcciones editoriales menores. El ejemplo manuscrito heredado de la plantilla del docente sigue excluido de esta rama.

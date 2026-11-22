@@ -1,29 +1,31 @@
-# Revisión de las notas de iPad para la Proposición 2.1
+# Revisión de `Prop_2_1_notas(3).pdf` (7 páginas)
 
-**Documento examinado:** `Prop_2_1_notas.pdf` (6 páginas), suministrado por el estudiante en el chat el 22 de noviembre de 2026.  
-**SHA-256 del archivo recibido:** `009d66d6eafe40047bc2da4113375c478628d650fbc76331739bbb0668168ffd`.  
-**Disponibilidad:** PDF revisado en el chat; **no está incorporado a este repositorio** en este commit.
+**Fuente:** PDF nuevo aportado por el usuario el **22 de noviembre de 2026**, distinto de la versión anterior de 6 páginas.  
+**SHA-256 del original recibido:** `bbcbd5d77f29b0befba8bdc9f151b3cb5abe96bf325bffa2bbb63b522258ba86`.
 
-## Resultado matemático
+## Hallazgo principal
 
-La reconstrucción de la Proposición 2.1 es sustancialmente correcta:
-- Páginas 1–2: problema del agente, regularidad de cola, existencia y selección del mayor maximizador;
-- Página 3: equivalencia entre elegir esfuerzo y maximizar la función neta de insumo total sobre `x >= b`;
-- Página 4: prueba correcta de la solución de esquina mediante concavidad y desempate por el mayor maximizador;
-- Página 5: regla de esfuerzo positivo-parte y producción bruta;
-- Página 6: alcance y funciones de cada hipótesis.
+**Páginas 4 y 5:** se observan trazos manuscritos incrustados como imágenes en el PDF, correspondientes al desarrollo del **caso de esquina** de la Proposición 2.1. Se han incorporado copias de esas dos páginas en `hand/`, derivadas de imágenes auténticas aportadas por el usuario (no manuscritos inventados). Las páginas restantes son apuntes mecanografiados con tipografía de apariencia manuscrita.
 
-## Dos ajustes antes de distribuir las notas
+## Comprobación matemática
 
-1. **Página 3:** el caso `b <= x*` no siempre es «interior»: cuando `b = x*`, la selección óptima tiene esfuerzo `e* = 0`. Recomiendo llamarlo **«Caso 1: x* es factible»**.
-2. **Página 6:** la frase «no está verificada en Lean» está desactualizada. La proposición está formalizada, con sus hipótesis explícitas, en `Aouad/RatioBound.lean`. Véase [CI #44972813354](https://github.com/alejandroventuraventurameza-tech/ai-01-aouad/actions/runs/44972813354) y [CI de dependencias #44973682156](https://github.com/alejandroventuraventurameza-tech/ai-01-aouad/actions/runs/44973682156).
+La demostración escrita es **correcta**. Define `b=s+a` y `f(x)=p(x)-γx`; para `y>b>x*`, establece
+```text
+t=(b-x*)/(y-x*) ∈ (0,1),   b=(1-t)x*+ty.
+```
+Por concavidad, `f(b) ≥ (1-t)f(x*)+t f(y)`. Como `x*` es el **mayor** maximizador global y `b>x*`, se deduce `f(x*)>f(b)`. Dado que `1-t>0`,
+```text
+f(b) > (1-t) f(b) + t f(y)  ⟹  f(b)>f(y).
+```
+Así, `b` es el único maximizador restringido para `x≥b`, lo que determina `e*=0`.
 
-## Alcance de la evidencia manuscrita
+**Matiz conceptual:** sin la regla de desempate no se deduce la **desigualdad estricta** en general, pero la concavidad puede seguir dando que `b` sea *un* maximizador factible. Esto no contradice el apunte en rojo de la página 5.
 
-Aunque el archivo fue preparado en iPad según el estudiante, su PDF contiene **texto componible con tipografías de aspecto manuscrito** (Caveat y Playpen Sans), no una fotografía o imagen raster de trazos manuscritos. Esta observación describe la **estructura técnica del archivo**, no cuestiona quién escribió las ideas.
+## Pequeños ajustes editoriales pendientes en el PDF original
 
-La [guía oficial del curso](https://github.com/alexanderquispe/AI-Econ-Modeling/blob/main/syllabus/repository-guide.md) pide **al menos una foto de una comprobación hecha a mano**, y expresamente indica que no basta una transcripción mecanografiada. Por tanto, este PDF sirve como apunte digital de estudio, **pero no se contabiliza automáticamente como la foto manuscrita exigida**.
+1. **Páginas 1 y 3:** la etiqueta «interior» para `b≤x*` incluye la igualdad `b=x*`, en la que `e*=0`. Es preferible decir **«caso en que x* es factible»**.
+2. **Página 7:** la frase «no está verificada en Lean» está desactualizada para el proyecto. La versión formal con hipótesis explícitas está verificada en [CI #44972813354](https://github.com/alejandroventuraventurameza-tech/ai-01-aouad/actions/runs/44972813354), y [CI #44973682156](https://github.com/alejandroventuraventurameza-tech/ai-01-aouad/actions/runs/44973682156) fijó las dependencias.
 
-Para satisfacer ese requisito, el estudiante puede escribir de su puño y letra **solo la página del caso de esquina** y aportar una fotografía JPG/PNG de los trazos auténticos en `hand/`. Una imagen exportada directamente desde una aplicación de escritura con lápiz sobre trazos propios también puede ser revisada, pero la aceptación de la evidencia corresponde al profesor.
+Estas observaciones no invalidan la prueba manuscrita. No se ha modificado el documento original; las imágenes `hand/` son conversiones comprimidas para registrar los trazos aportados.
 
-Este informe no reemplaza el PDF original ni altera su contenido. La publicación de la conversación auténtica en `prompts.md` es una obligación separada.
+**Alcance:** el requisito de `prompts.md` sigue pendiente y se audita por separado. La aceptación final de escritura manual mediante iPad compete al profesor.

@@ -35,5 +35,6 @@ $$
 - **Lean 4:** [kernel-verified Proposition 2.1](Aouad/RatioBound.lean), [CI #44972813354](https://github.com/alejandroventuraventurameza-tech/ai-01-aouad/actions/runs/44972813354), 8,930 jobs, 14 declarations axiom-audited, no sorryAx.
 - **Presentation:** [original Beamer source](presentation.tex) and [compiled six-page PDF](presentation.pdf); [successful build](https://github.com/alejandroventuraventurameza-tech/ai-01-aouad/actions/runs/44970668988).
 - **Research audit:** [scope](docs/LEAN_FORMAL_SCOPE.md), [reproducibility](docs/REPRODUCIBILITY.md), [version-aware extensions](extensions.md) (v1 assigned; [v2](https://arxiv.org/pdf/2605.11350v2) later).
-- **Not yet ready to submit:** genuine student dialogue in [prompts.md](prompts.md) and a real handwritten photo in [hand/](hand/) are **missing**. The instructor-template transcript and notebook were removed. [PR #1](https://github.com/alejandroventuraventurameza-tech/ai-01-aouad/pull/1) remains a draft; `main` is unchanged.
+- **Evidencia manuscrita (iPad):** [página 4 — planteamiento y concavidad](hand/prop-2-1-ipad-p4.png) y [página 5 — desigualdad estricta y solución de esquina](hand/prop-2-1-ipad-p5.png), ambas derivadas de las páginas escritas con lápiz del PDF entregado por el estudiante.
+- **Aún pendiente:** registro auténtico de prompts y respuestas en [prompts.md](prompts.md). [PR #1](https://github.com/alejandroventuraventurameza-tech/ai-01-aouad/pull/1) permanece en borrador; `main` no se modificó.
 
