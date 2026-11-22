@@ -18,6 +18,7 @@ on:
   pull_request:
     branches:
       - main
+    types: [opened, synchronize, reopened, ready_for_review]
   workflow_dispatch:
 
 permissions:
@@ -43,6 +44,11 @@ jobs:
           } >> "$GITHUB_STEP_SUMMARY"
           if grep -q '^\[MISSING\]' submission-audit.txt; then
             echo "::warning title=Course release incomplete::At least one structural requirement is missing; do not merge or submit."
+          fi
+          # Drafts receive a diagnostic report. Once marked ready for review,
+          # the same structural gaps become a failing release check.
+          if [[ "${{ github.event_name }}" == "pull_request" && "${{ github.event.pull_request.draft }}" == "false" ]]; then
+            python3 scripts/audit_submission.py --strict
           fi
       - name: Preserve structural report for review
         uses: actions/upload-artifact@v4
