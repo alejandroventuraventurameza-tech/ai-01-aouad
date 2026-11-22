@@ -1,51 +1,63 @@
 # Repository 1 — Aouad, Lykouris & Zhong (2026)
 
-**Course assignment:** [Issue #6](https://github.com/alexanderquispe/AI-Econ-Modeling/issues/6) · **Paper:** [Human-AI Productivity Paradoxes](https://arxiv.org/abs/2605.11350).
+**Assignment:** [AI-Econ-Modeling Issue #6](https://github.com/alexanderquispe/AI-Econ-Modeling/issues/6).  
+**Assigned source:** [arXiv:2605.11350v1 (12 May 2026)](https://arxiv.org/pdf/2605.11350v1).  
+**Later revision:** [arXiv:2605.11350v2 (17 October 2026)](https://arxiv.org/pdf/2605.11350v2).
 
-> **Work in progress.** This repository was initialized from [the instructor's worked-example template](https://github.com/alexanderquispe/ai-01-aouad). The inherited `prompts.md`, `hand/`, and presentation are **instructor example artifacts**, not evidence of this student's own prompts, handwriting, or presentation. They must be replaced or accurately attributed before submission. This notice must not be removed until that audit is complete.
+> **DRAFT — PROVENANCE WARNING:** This repository was initialized from the [instructor's worked example](https://github.com/alexanderquispe/ai-01-aouad). The inherited prompts, handwriting, and presentation are **the instructor's example**, not the student's own evidence. This branch introduces new mathematical notes and an original presentation. Do not merge or submit until the student's original raw conversation and actual handwritten derivation are added and checked.
 
-## Question and model
+## Research question
 
-How can more AI assistance reduce human effort, and when does its effect on realized output change?
+How can AI replace human effort in the short run while, through changing skill or reliability, lowering productivity in richer settings?
 
-A worker with skill $s\geq0$, assistance $a\geq0$, and effort $e\geq0$ chooses
+## Section 2 — the static decision
+
+A worker with skill $s>0$ and deterministic AI assistance $a\geq 0$ chooses effort $e\geq 0$:
 $$
-\max_{e\geq0}\;p(s+a+e)-\gamma e,
+\max_{e\geq0}\ U(e;s,a)=p(s+e+a)-\gamma e,
 $$
-where $\gamma>0$ and (p) is nondecreasing and concave on the relevant nonnegative domain. The model assumes perfect substitution across these three inputs and linear effort cost.
+where $\gamma>0$. The production function $p:[0,\infty)\to[0,\infty)$ is continuous, nondecreasing and concave (the paper additionally assumes twice differentiability). Human skill, effort and assistance are **perfect substitutes** in this baseline.
 
-## Proposition 2.1 — precise optimizer convention
+Define the concave net-output function $f(x)=p(x)-\gamma x$ and its **largest** global maximizer:
+$$
+x^\star=\max\operatorname{argmax}_{x\geq0}\{p(x)-\gamma x\}.
+$$
+The tail condition
+$$
+\limsup_{x\to\infty}\frac{p(x)}{x}<\gamma
+$$
+ensures the maximum exists and its argmax is bounded, given continuity.
 
-Let (f(x)=p(x)-\gamma x) on $x\geq0$. Assume its maximum exists and let
+**Proposition 2.1 (v1 and v2).** With the largest-maximizer tie-break, an optimal effort selection and the associated realized productivity are
 $$
-x^* = \max\operatorname{argmax}_{x\geq0} f(x).
+e^\star(s,a)=(x^\star-s-a)_+,\qquad
+p^\star(s,a)=\max\{p(x^\star),p(s+a)\}.
 $$
-A sufficient tail regularity condition under the maintained continuity/concavity assumptions is
-$$
-\limsup_{x\to\infty}\frac{p(x)}{x}<\gamma.
-$$
-Then the **largest optimal effort** (important when (f) has a flat peak) is
-$$
-e^*(s,a)=$x^*-s-a$_+,
-\qquad
-p^*(s,a)=\max\{p$x^*$,p(s+a)\}.
-$$
-The first formula is a **tie-broken selection** from potentially multiple optimal efforts; it does not imply every optimizer coincides with it.
 
-### Proof skeleton $no differentiation$
+**Why:** Set $b=s+a$ and $x=b+e$. The worker maximizes $f(x)+\gamma b$ over $x\geq b$. If $b\leq x^\star$, the largest global maximizer is feasible; if $b>x^\star$, concavity makes $f$ decrease to the right of $x^\star$, so the best feasible point is $x=b$. This proof requires no derivative or interior FOC. See [the independent proof audit](docs/PROPOSITION_2_1_PROOF_AUDIT.md).
 
-Put $b=s+a$ and $x=b+e$. The feasible set is $x\geq b$ and the objective is (f(x)+\gamma b). If $b\leq x^*$, $x^*$ is feasible and is the greatest maximizing (x). If $b>x^*$, concavity and the fact that $x^*$ is the greatest *global* maximizer imply (f) is strictly decreasing beyond $x^*$; hence $x=b$ is the unique maximizing feasible point. See [the detailed proof audit]$docs/PROPOSITION_2_1_PROOF_AUDIT.md$.
+**Interpretation:** Effort falls one-for-one as skill plus assistance approaches the target; output is initially constant, then weakly increasing. This baseline *does not itself* establish a productivity paradox.
 
-## Coverage and evidence ledger
+## Broader mechanisms — reading only
 
-| Requirement | Current status |
+- **§3:** effort-dependent skill accumulation (birth–death process) can produce long-run deskilling.
+- **§4:** unreliable assistance and effort substitution can lower expected productivity.
+- **§5:** heterogeneous AI literacy with endogenous skill can polarize the skill distribution.
+
+No attempt is made here to reproduce the theorems of §§3–5. See [version-aware extension audit](extensions.md). The October v2 also analyzes forward-looking behavior; claiming that the paper never considers this would be inaccurate.
+
+## Submission ledger
+
+| Deliverable | Status |
 |---|---|
-| Research question, agent's problem, assumptions and Proposition 2.1 | **Drafted and audited** in this README and `docs/` |
-| Original raw model-interaction transcript (`prompts.md`) | **Not yet supplied**; current file belongs to the instructor template |
-| Student's own handwritten derivation (`hand/`) | **Not yet supplied**; current directory belongs to the instructor template |
-| Student's 5-minute Beamer deck + compiled PDF | **Not yet produced**; current files belong to the instructor template |
-| Optional Lean formalization | **Not yet compiled or kernel-verified** |
-| Branch → pull request → merge | **Branch open; no merge** |
-| Comment with repository link on Issue #6 | **Not yet posted** |
+| README with model and core result | Draft complete |
+| Independent typed proof (docs/) | Draft complete; not Lean-certified |
+| Raw student dialogue (prompts.md) | **Missing: inherited template transcript is not student-authored** |
+| Student's physical handwritten derivation (hand/) | **Missing: inherited images are not student-authored** |
+| Original Beamer presentation.tex and compiled presentation.pdf | In progress; inherited PDF must be replaced |
+| Optional Lean 4 proof | In progress; kernel status must be checked |
+| Branch → PR → merge / comment on Issue #6 | PR is draft; not submitted |
 
-Sections 3–5 are intended for conceptual review only, as specified in Issue #6. No claim of new research contribution or mathematical formalization is made by copying the template.
+## Evidence rules
+
+A compiled PDF shows LaTeX validity, not correctness of the mathematics. A green Lean CI certifies only the *exact statements in the compiled file*, under their explicit hypotheses. Instructor-template files are never offered as evidence of original student work.
