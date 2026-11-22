@@ -33,6 +33,6 @@ Gamma positivity, assumed in the source economic model, is not mathematically ne
 
 - Only the **static** Proposition 2.1 is formalized. Nothing is certified here about birth-death Markov chains, IARA/DARA effects, Bayesian learning, deskilling, unreliability, or skill polarization.
 - The proof is in a compatible mathematical representation with explicit domain and regularity assumptions; it should not be described as a literal line-by-line compilation of the paper's prose.
-- This is not the student's handwritten derivation or an authentic raw ChatGPT transcript. The course's evidence requirements remain unsatisfied.
+- This Lean proof is not itself handwriting or a ChatGPT conversation log. The student's seven-page original iPad PDF and manuscript images are now in `hand/` (see [review](REVIEW_IPAD_PDF.md)); instructor acceptance of digital handwriting remains outside the scope of automated checks. The student's copied chat excerpts are recorded in [prompts.md](../prompts.md) and [RP4 ledger](RP4_CONVERSACION_EN_CURSO.md), but the combined record is **not a fully verbatim export of both parties**.
 
-Do not merge PR #1 or submit Issue #6 until the original student handwriting and raw conversation are added and checked.
+Do not describe all course evidence as certified, or merge PR #1 as a completed academic submission, until the dialogue integrity gate and human manuscript review are addressed.
