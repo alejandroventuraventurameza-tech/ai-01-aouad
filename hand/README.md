@@ -1,11 +1,11 @@
 # Evidencia manuscrita — Proposición 2.1
 
-**Estado: recibida y revisada en cuanto a contenido.** El estudiante aportó el 22 de noviembre de 2026 el documento `Prop_2_1_notas(3).pdf` de **7 páginas**. Sus páginas **4 y 5** contienen trazos de escritura manual en iPad incorporados como imágenes, y no texto de tipografía manuscrita.
+**Estado: PDF completo y evidencia manuscrita recibidos, incorporados y revisados en cuanto a contenido.** El estudiante aportó el 22 de noviembre de 2026 el documento `Prop_2_1_notas(3).pdf` de **7 páginas**. Sus páginas **4 y 5** contienen trazos de escritura manual en iPad incorporados como imágenes, y no texto de tipografía manuscrita.
 
 - [prop-2-1-ipad-p4.png](prop-2-1-ipad-p4.png): caso de esquina `b > x*`, elección de `y > b`, parámetro `t` y desigualdad por concavidad.
 - [prop-2-1-ipad-p5.png](prop-2-1-ipad-p5.png): uso del **mayor maximizador**, deducción estricta `f(b)>f(y)` y `e*=0`.
 
-Ambas imágenes son **conversiones optimizadas del documento enviado**, reducidas de resolución y paletizadas para hacer viable el almacenamiento. No son reproducciones dibujadas o generadas artificialmente. **No son los bytes originales** del PDF. El documento recibido tenía SHA-256:
+Ambas imágenes son **conversiones optimizadas del documento enviado**, reducidas de resolución y paletizadas para hacer viable el almacenamiento. No son reproducciones dibujadas o generadas artificialmente. **No son los bytes originales** del PDF, que ahora también se conserva íntegro en [Prop_2_1_notas_ipad.pdf](Prop_2_1_notas_ipad.pdf) (7 páginas; archivo fuente originalmente denominado `Prop_2_1_notas(3).pdf`; no se ha editado). El documento recibido tenía SHA-256:
 `bbcbd5d77f29b0befba8bdc9f151b3cb5abe96bf325bffa2bbb63b522258ba86`.
 
 SHA-256 de las imágenes en GitHub:

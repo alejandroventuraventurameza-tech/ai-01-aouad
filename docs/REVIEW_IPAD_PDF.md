@@ -3,6 +3,8 @@
 **Fuente:** PDF nuevo aportado por el usuario el **22 de noviembre de 2026**, distinto de la versión anterior de 6 páginas.  
 **SHA-256 del original recibido:** `bbcbd5d77f29b0befba8bdc9f151b3cb5abe96bf325bffa2bbb63b522258ba86`.
 
+**Original incorporado sin alteraciones:** [hand/Prop_2_1_notas_ipad.pdf](../hand/Prop_2_1_notas_ipad.pdf), siete páginas, identificador de blob Git `203e242e516022b63bd857f743b01542af918022`. Las imágenes separadas de las páginas 4 y 5 siguen disponibles para inspección directa.
+
 ## Hallazgo principal
 
 **Páginas 4 y 5:** se observan trazos manuscritos incrustados como imágenes en el PDF, correspondientes al desarrollo del **caso de esquina** de la Proposición 2.1. Se han incorporado copias de esas dos páginas en `hand/`, derivadas de imágenes auténticas aportadas por el usuario (no manuscritos inventados). Las páginas restantes son apuntes mecanografiados con tipografía de apariencia manuscrita.
