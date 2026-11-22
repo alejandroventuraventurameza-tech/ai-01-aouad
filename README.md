@@ -8,33 +8,33 @@
 
 How can more AI assistance reduce human effort, and when does its effect on realized output change?
 
-A worker with skill \(s\geq0\), assistance \(a\geq0\), and effort \(e\geq0\) chooses
-$
+A worker with skill $s\geq0$, assistance $a\geq0$, and effort $e\geq0$ chooses
+$$
 \max_{e\geq0}\;p(s+a+e)-\gamma e,
-$
-where \(\gamma>0\) and \(p\) is nondecreasing and concave on the relevant nonnegative domain. The model assumes perfect substitution across these three inputs and linear effort cost.
+$$
+where $\gamma>0$ and (p) is nondecreasing and concave on the relevant nonnegative domain. The model assumes perfect substitution across these three inputs and linear effort cost.
 
 ## Proposition 2.1 — precise optimizer convention
 
-Let (f\(x\)=p\(x\)-\gamma x) on \(x\geq0\). Assume its maximum exists and let
-$
-x^* = \max\operatorname{argmax}_{x\geq0} f\(x\).
-$
+Let (f(x)=p(x)-\gamma x) on $x\geq0$. Assume its maximum exists and let
+$$
+x^* = \max\operatorname{argmax}_{x\geq0} f(x).
+$$
 A sufficient tail regularity condition under the maintained continuity/concavity assumptions is
-$
-\limsup_{x\to\infty}\frac{p\(x\)}{x}<\gamma.
-$
-Then the **largest optimal effort** (important when \(f\) has a flat peak) is
-$
-e^*(s,a)=\(x^*-s-a\)_+,
+$$
+\limsup_{x\to\infty}\frac{p(x)}{x}<\gamma.
+$$
+Then the **largest optimal effort** (important when (f) has a flat peak) is
+$$
+e^*(s,a)=$x^*-s-a$_+,
 \qquad
-p^*(s,a)=\max\{p\(x^*\),p(s+a)\}.
-$
+p^*(s,a)=\max\{p$x^*$,p(s+a)\}.
+$$
 The first formula is a **tie-broken selection** from potentially multiple optimal efforts; it does not imply every optimizer coincides with it.
 
-### Proof skeleton \(no differentiation\)
+### Proof skeleton $no differentiation$
 
-Put \(b=s+a\) and \(x=b+e\). The feasible set is \(x\geq b\) and the objective is (f\(x\)+\gamma b). If \(b\leq x^*\), \(x^*\) is feasible and is the greatest maximizing \(x\). If \(b>x^*\), concavity and the fact that \(x^*\) is the greatest *global* maximizer imply \(f\) is strictly decreasing beyond \(x^*\); hence \(x=b\) is the unique maximizing feasible point. See [the detailed proof audit]\(docs/PROPOSITION_2_1_PROOF_AUDIT.md\).
+Put $b=s+a$ and $x=b+e$. The feasible set is $x\geq b$ and the objective is (f(x)+\gamma b). If $b\leq x^*$, $x^*$ is feasible and is the greatest maximizing (x). If $b>x^*$, concavity and the fact that $x^*$ is the greatest *global* maximizer imply (f) is strictly decreasing beyond $x^*$; hence $x=b$ is the unique maximizing feasible point. See [the detailed proof audit]$docs/PROPOSITION_2_1_PROOF_AUDIT.md$.
 
 ## Coverage and evidence ledger
 
