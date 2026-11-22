@@ -1,114 +1,137 @@
 \documentclass[aspectratio=169,11pt]{beamer}
-\usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
 \usepackage{amsmath,amssymb}
-\usepackage{booktabs}
+\usepackage{microtype}
+\usepackage{hyperref}
 \usetheme{default}
-\usecolortheme{seahorse}
+\definecolor{ink}{RGB}{26,46,65}
+\definecolor{accent}{RGB}{0,111,124}
+\definecolor{muted}{RGB}{79,91,103}
+\setbeamercolor{normal text}{fg=ink,bg=white}
+\setbeamercolor{frametitle}{fg=ink,bg=white}
+\setbeamercolor{title}{fg=ink}
+\setbeamercolor{structure}{fg=accent}
+\setbeamercolor{block title}{fg=white,bg=ink}
+\setbeamercolor{block body}{fg=ink,bg=black!4}
+\setbeamerfont{frametitle}{size=\Large,series=\bfseries}
 \setbeamertemplate{navigation symbols}{}
-\setbeamertemplate{footline}[frame number]
-\setbeamerfont{frametitle}{size=\large}
-
-\title{Aouad, Lykouris \& Zhong (2026)}
-\subtitle{\emph{Human-AI Productivity Paradoxes} --- Section 2}
-\author{Alexander Quispe}
-\date{Repository 1 \textperiodcentered{} Week of August 17--22}
-
+\setbeamertemplate{footline}{\hfill\color{muted}\scriptsize Aouad, Lykouris \& Zhong (2026) \quad $\cdot$ \quad Repository 1 \quad \insertframenumber\, /\ \inserttotalframenumber\hspace{1.1em}\vspace{0.7em}}
+\setbeamersize{text margin left=1.05cm,text margin right=1.05cm}
+\newcommand{\highlight}[1]{{\color{accent}\bfseries #1}}
+\title{When AI substitutes for human effort}
+\subtitle{Aouad, Lykouris \& Zhong (2026) \\ Proposition 2.1 --- a derivative-free reconstruction}
+\author{Repository 1 $\mid$ Independent student analysis}
+\date{AI and Economic Modeling $\mid$ 2026-II}
 \begin{document}
 
-%================= PORTADA (con el enlace al repositorio) =============
 \begin{frame}[plain]
-  \titlepage
-  \begin{center}\small
-    \texttt{github.com/alexanderquispe/ai-01-aouad}
-  \end{center}
+  \vspace{0.8cm}
+  {\color{accent}\bfseries REPOSITORY 1 \quad / \quad FIVE-MINUTE RESEARCH BRIEF}\par
+  \vspace{1.0cm}
+  {\usebeamerfont{title}\color{ink}\huge When AI substitutes\\[0.12cm] for human effort}\par
+  \vspace{0.42cm}
+  {\large Aouad, Lykouris \& Zhong (2026)}\par
+  \vspace{0.22cm}
+  {\large Proposition 2.1: a case split, not an FOC}\par
+  \vfill
+  {\small Source: arXiv:2605.11350v1, Section 2; course Issue \#6}\par
+  {\scriptsize github.com/alejandroventuraventurameza-tech/ai-01-aouad}\par
+  \vspace{0.5cm}
 \end{frame}
 
-%================= 1. EL ART\'ICULO ====================================
-\begin{frame}{1 \textperiodcentered{} The paper and the agent's problem}
-  \textbf{Question.} When does AI assistance make a worker \emph{less} productive?
+\begin{frame}{1. The worker's decision}
+  \large
+  Skill $s$, effort $e$ and reliable AI assistance $a$ are \highlight{perfect substitutes}:
+  \[
+    x=s+e+a,\qquad e\geq 0.
+  \]
+  The worker chooses effort, not total output:
+  \begin{block}{Static objective}
+    \centering\Large $\displaystyle \max_{e\geq0}\; p(s+e+a)-\gamma e.$
+  \end{block}
+  \normalsize
+  \vspace{0.25cm}
+  Assumptions: $p$ is continuous, concave and nondecreasing; $\gamma>0$.
+  \vspace{0.3cm}
+  \par\highlight{Economic tension:} AI may displace costly effort without reducing contemporaneous production.
+\end{frame}
 
-  \medskip
-  \textbf{The single mechanism.} AI is a \emph{perfectly substitutable input}:
-  skill, effort and assistance enter production only through their sum.
-  \[ x \;=\; s + e + a \]
+\begin{frame}{2. A critical input level --- with a tie-break}
+  \large
+  Let $f(x)=p(x)-\gamma x$. Define the \highlight{largest} global maximizer:
+  \[
+    x^\star=\max\operatorname*{arg\,max}_{x\geq0}\{f(x)\}.
+  \]
+  \begin{block}{Why is this well defined?}
+    \centering
+    $\displaystyle \limsup_{x\to\infty}\frac{p(x)}{x}<\gamma
+    \quad\Longrightarrow\quad f(x)\to-\infty.$
+  \end{block}
+  \vspace{0.18cm}
+  Continuity then ensures a finite, attained maximum. The \emph{largest}-maximizer convention matters when $f$ has a flat peak.
+  \vspace{0.28cm}
+  \par\small This is an optimization result: a first-order condition is neither necessary for the proof nor sufficient to handle all corners.
+\end{frame}
 
-  \medskip
-  \textbf{The agent's problem.} Choose effort $e$ to maximise output net of a
-  \emph{linear} cost:
-  \[ \max_{e \ge 0}\; p(s+e+a) \;-\; \gamma e \]
+\begin{frame}{3. Proof by cases (no differentiation)}
+  \large
+  Put $b=s+a$ and $x=b+e$. Then
+  \[
+    p(b+e)-\gamma e = f(x)+\gamma b,\qquad x\geq b.
+  \]
+  \vspace{0.12cm}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.47\textwidth}
+      \highlight{Case A: $b\leq x^\star$}
+      \vspace{0.18cm}
+      \par $x^\star$ is feasible and globally optimal. Choose the largest optimizer:
+      \[
+        e^\star=x^\star-b.
+      \]
+    \end{column}
+    \begin{column}{0.49\textwidth}
+      \highlight{Case B: $b>x^\star$}
+      \vspace{0.18cm}
+      \par Concavity implies $f$ is decreasing beyond its greatest maximizer:
+      \[
+        \underset{x\geq b}{\arg\max}\, f(x)=\{b\}.
+      \]
+      Hence $e^\star=0$.
+    \end{column}
+  \end{columns}
+  \vspace{0.18cm}
+  \par\normalsize Rigorous inequality: for $y>b>x^\star$, write $b=(1-t)x^\star+ty$, $0<t<1$; concavity and $f(x^\star)\geq f(b)$ yield $f(b)\geq f(y)$.
+\end{frame}
 
-  \smallskip
-  \begin{itemize}\small
-    \item $p$ weakly increasing, concave, twice differentiable; $\gamma>0$.
-    \item Only constraint: $e \ge 0$ --- and it binds. That is the whole result.
+\begin{frame}{4. Proposition 2.1 and its meaning}
+  \begin{block}{Largest optimal effort and realized gross productivity}
+    \centering\Large
+    $\displaystyle e^\star(s,a)=(x^\star-s-a)_+$\par\medskip
+    $\displaystyle p^\star(s,a)=\max\{p(x^\star),\,p(s+a)\}$
+  \end{block}
+  \vspace{0.28cm}
+  \large
+  \begin{itemize}
+  \setlength\itemsep{0.23cm}
+  \item When $s+a<x^\star$, more AI reduces \emph{effort}, keeping total input at $x^\star$.
+  \item Once $s+a\geq x^\star$, effort is zero and gross output is weakly increasing.
+  \item This baseline alone \highlight{does not generate a productivity paradox}.
   \end{itemize}
 \end{frame}
 
-%================= 2. EL RESULTADO ===================================
-\begin{frame}{2 \textperiodcentered{} Proposition 2.1, with all its conditions}
-  Define $x^{*}$ as the \emph{largest} maximiser of $p(x)-\gamma x$:
-  \[ x^{*} \;=\; \max\,\arg\max_{x}\;\bigl[\,p(x)-\gamma x\,\bigr] \]
-
-  \textbf{Regularity condition} (without it $x^{*}$ need not exist):
-  \[ \limsup_{x\to\infty} \frac{p(x)}{x} \;<\; \gamma \]
-
-  \medskip
-  \textbf{Then}
-  \[ e^{*}(s,a) = \bigl(x^{*}-s-a\bigr)_{+}, \qquad
-     p^{*}(s,a) = \max\bigl\{\,p(x^{*}),\; p(s+a)\,\bigr\} \]
-
-  \medskip
-  \footnotesize\emph{Intuition.} The agent has one target level of total input;
-  he tops it up with effort, and once skill plus AI already reach it he simply
-  stops working.
+\begin{frame}{5. What the paper adds --- and one research trap}
+  \large
+  \textbf{Reading map:} Section 3 (skill dynamics); Section 4 (unreliable AI); Section 5 (AI literacy and polarization). These are \highlight{not reproduced} here.
+  \vspace{0.42cm}
+  \begin{block}{Do not confuse novelty with an unexamined appendix}
+    \normalsize
+    Convex effort costs already appear in Appendix D. The later October 2026 v2 also studies forward-looking effort, so myopia is \emph{not} an untouched extension across paper versions.
+  \end{block}
+  \vspace{0.28cm}
+  \par\highlight{Takeaway:} Formal assumptions, tie-breaking and source-version checks matter as much as the algebra.
+  \vspace{0.10cm}
+  \par{\scriptsize Sources: arXiv:2605.11350v1 (assigned); v2 (October update); course Issue \#6.}
 \end{frame}
-
-%================= 3. LO QUE HICE ====================================
-\begin{frame}{3 \textperiodcentered{} What I did}
-  \textbf{Reproduced} Proposition 2.1 by hand --- the interior-versus-corner
-  split, with no differentiation in the proof (\texttt{hand/}).
-
-  \medskip
-  \textbf{Assumptions I considered relaxing}
-  \begin{itemize}\small
-    \item \textbf{Linear cost $\to$ convex.} \emph{Dead end}: the authors already
-      do it in Appendix D (Props. D.3, D.6). Replication, not extension.
-    \item \textbf{Myopia.} A two-period agent who internalises skill dynamics.
-      Never relaxed anywhere in the paper --- this is the live one.
-    \item \textbf{Complementarity inside $p(\cdot)$} rather than as an added
-      interaction term. Harder: \S{}4.4 and \S{}5.3 partly pre-empt it.
-  \end{itemize}
-
-  \medskip
-  \textbf{Also produced} a full step-by-step tutorial of the paper and two
-  lecture decks (\texttt{extra/}).
-\end{frame}
-
-%================= 4. LA IA =========================================
-\begin{frame}{4 \textperiodcentered{} Where I did not believe the AI}
-  \textbf{What I asked.} ``What is the most natural extension of this model?''
-
-  \medskip
-  \textbf{What the model answered.} Relax the linear cost $c(e)=\gamma e$ to a
-  strictly convex $c(e)$ --- presented confidently as an open direction.
-
-  \medskip
-  \textbf{My verdict: \textcolor{red}{incorrect as an extension}.}
-  \begin{itemize}\small
-    \item Appendix D is titled \emph{``Extension to convex cost functions''} and
-      redoes Sections 2--4 under strictly convex cost.
-    \item So the proposal is already in the paper. I checked the appendix
-      directly rather than taking the answer at face value.
-    \item \emph{Caveat worth keeping:} Appendix D covers \S\S{}2--4 but \textbf{not}
-      \S{}5, so convex cost applied to the skill-polarisation result is genuinely
-      untouched.
-  \end{itemize}
-
-  \medskip
-  \footnotesize The step I re-derived by hand is in \texttt{hand/} --- I did not
-  trust the algebra of the first-order condition until I had written it out.
-\end{frame}
-
 \end{document}
