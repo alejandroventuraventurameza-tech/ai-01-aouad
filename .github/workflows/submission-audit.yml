@@ -1,0 +1,52 @@
+name: Issue 6 — submission readiness diagnostic
+
+on:
+  push:
+    branches:
+      - work/repository1-proposition21-audit
+      - main
+    paths:
+      - README.md
+      - prompts.md
+      - hand/**
+      - presentation.tex
+      - presentation.pdf
+      - Aouad/**
+      - lake-manifest.json
+      - scripts/audit_submission.py
+      - .github/workflows/submission-audit.yml
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  structural-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Inspect actual repository files, without fabricating evidence
+        run: |
+          python3 scripts/audit_submission.py --json submission-audit.json | tee submission-audit.txt
+          {
+            echo '### Issue #6 — structural submission status'
+            echo ''
+            echo 'The check is non-blocking while the PR is a draft.'
+            echo 'Authenticity of handwriting and transcript must be verified by a person.'
+            echo ''
+            echo '~~~text'
+            cat submission-audit.txt
+            echo '~~~'
+          } >> "$GITHUB_STEP_SUMMARY"
+          if grep -q '^\[MISSING\]' submission-audit.txt; then
+            echo "::warning title=Course release incomplete::At least one structural requirement is missing; do not merge or submit."
+          fi
+      - name: Preserve structural report for review
+        uses: actions/upload-artifact@v4
+        with:
+          name: issue-6-structural-audit
+          path: submission-audit.json
+          if-no-files-found: error

@@ -18,3 +18,8 @@ DNI*
 
 # The article itself: third-party PDF, fetch it from arXiv
 paper/*.pdf
+
+# Lean/Lake generated caches (keep lake-manifest.json tracked)
+.lake/
+*.olean
+*.ilean

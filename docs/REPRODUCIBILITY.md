@@ -25,7 +25,9 @@ lake build Aouad
 latexmk -pdf -interaction=nonstopmode -halt-on-error presentation.tex
 ~~~
 
-The Lean workflow currently generates lake-manifest.json rather than committing it. To freeze all transitive dependency revisions precisely, preserve an inspected manifest in the final repository before declaring the entire environment immutable. The source-level Mathlib revision is pinned.
+**Dependency lock verified:** The [new pinned CI #44973682156](https://github.com/alejandroventuraventurameza-tech/ai-01-aouad/actions/runs/44973682156) completed successfully and subsequently committed the **exact manifest it used** on branch commit 501e25f4eb0278057b736cd0a517bb625729ceba. The tracked [lake-manifest.json](../lake-manifest.json) fixes nine package commits, including Mathlib at 5ed2965256430c3649e86755f9576b54eca72435. Future CI uses the committed manifest and only runs lake update if none is present.
+
+**Structural release diagnostic:** [scripts/audit_submission.py](../scripts/audit_submission.py) checks file presence, raw prompt placeholder status, an original photo file, PDF header, Lean source and dependency lockfile; [GitHub Actions release audit](../.github/workflows/submission-audit.yml) prints warnings and uploads the structural JSON report. It is intentionally **non-blocking for a draft PR**; neither script nor CI can authenticate a student's handwriting or public-chat transcript. Originality needs human review.
 
 ## Non-formal obligations and release blockers
 
