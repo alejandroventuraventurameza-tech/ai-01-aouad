@@ -30,7 +30,90 @@ El proyecto contiene trabajo de formalización matemática en Lean, código de r
 
 Todavía no he modificado archivos ni lanzado nuevas compilaciones. Estoy separando las obligaciones de la tarea académica de las pruebas que el repositorio ya ha superado.
 
-[Continúa con diagnóstico de ai-project e issue #7. **Nota de trazabilidad:** esto registra una confusión del asistente, no resultados de Repository 1.]
+2. La tarea oficial y sus requisitos
+Revisé la consigna oficial del profesor Alexander Quispe (issue #7).
+
+ENTREGA FINAL
+
+Jueves 26 de noviembre de 2026 · 22:00
+Hora de Lima. Se evalúa el contenido fusionado en main.
+Componente
+
+Exigencia
+
+Paper
+
+LaTeX y PDF, cuerpo de 8–20 páginas, proposición propia con prueba completa
+
+Reproducción
+
+code/verify.py debe verificar los resultados y reproducir cifras y figuras
+
+Lean 4
+
+Formalizar los resultados numerados, comprobar las demostraciones e identificar las brechas
+
+Manuscrito
+
+Derivaciones escritas personalmente a mano, sin omitir pasos
+
+Presentación
+
+Conservar las diapositivas finales, la comparación paper–Lean y el cotejo manuscrito
+
+Trazabilidad
+
+README, bibliografía, registro de IA, commits, comprobaciones y merge final
+
+3. Diagnóstico del proyecto actual
+Compilación Python y LaTeX
+
+Verificada
+GitHub Actions del 18 de noviembre: build aprobado y editorial-qa aprobado. El commit posterior c52cabd sincronizó solamente los cuatro PDF y omitió CI.
+
+Compilación Lean 4
+
+Verificada parcialmente
+La ejecución #43775107518 del 15 de noviembre compiló correctamente los módulos candidatos incluidos en esa corrida, con controles de axiomas. No certifica todos los teoremas del paper.
+
+Correspondencia paper–Lean
+
+Pendiente
+El inventario registra 57 resultados: 24 con comparación semántica específica y 33 sin revisión individual. Ninguno está clasificado todavía como equivalencia completa del enunciado del paper en el archivo de correspondencia.
+
+Derivaciones manuscritas
+
+Pendiente
+Existe una guía de derivaciones, pero aún no hay escaneos ni veredictos manuscritos personales incorporados.
+
+Integración final
+
+Pendiente
+El PR #2 sigue en borrador y apunta a una rama anterior. La rama de trabajo actual acumula 446 commits adicionales respecto de ese PR.
+
+4. El problema científico que debemos resolver
+El modelo estudia cómo los instrumentos monetarios, a través de bancos, mercado interbancario y restricciones de colateral, pueden modificar la asignación de capital entre empresas heterogéneas.
+
+Tenemos resultados numéricos reproducibles para las ramas S y B. Pero persisten tres brechas fundamentales:
+
+Correspondencia SOURCE–Python: aún no se ha demostrado que las 33 ecuaciones del operador económico Lean correspondan funcionalmente, bajo las mismas condiciones, al sistema que resuelve Python.
+
+Certificación matemática: falta un certificado completo de raíz, Jacobiano e hipótesis suficientes para trasladar determinados resultados numéricos a teoremas del modelo original.
+
+Equilibrio dinámico: no está demostrada la existencia del equilibrio competitivo completo de horizonte infinito para las dos ramas, ni un incremento permanente de la tasa de crecimiento económico.
+
+Estos límites están documentados en el informe científico de avance del 18 de noviembre.
+
+5. Cómo procederemos
+Mi propuesta es trabajar con dos objetivos simultáneos: terminar una entrega académica válida para el 26 de noviembre y avanzar en la demostración rigurosa del modelo, sin confundir ambos objetivos.
+
+Primero, auditaremos los resultados numerados y fijaremos exactamente qué proposiciones podemos defender. Después abordaremos las brechas Lean prioritarias, utilizando los workflows existentes con las versiones fijadas de Lean y AppliedModelingLib. Cada compilación nueva deberá quedar vinculada a su commit, sus logs y su auditoría de axiomas.
+
+En paralelo, cerraremos el manuscrito, las reproducciones y el apéndice manuscrito que debes elaborar personalmente. También detecté una cuestión de cumplimiento: la rama de trabajo modifica build.yml, mientras la consigna exige conservar el workflow oficial. Tendremos que corregir esa diferencia sin perder los controles adicionales.
+
+Finalmente, integraremos el trabajo en un PR actualizado y verificaremos main antes del vencimiento.
+
+Sí, estoy listo. Ya identifiqué la consigna, el repositorio, la evidencia de compilación y las obligaciones pendientes. Podemos utilizar GitHub para escribir y validar código y los workflows de Actions para compilar Lean; la ejecución de una nueva corrida y sus resultados todavía deberán comprobarse. No he alterado ninguna rama durante esta revisión.
 
 ### Usuario
 Por favor, continúa el chat de repositorio_1.
@@ -44,7 +127,68 @@ alejandroventuraventurameza-tech/ai-project
 
 También recuperé la consigna oficial del proyecto, que establece el 26 de noviembre de 2026, a las 22:00 (Lima), como fecha límite para el artículo final.
 
-[El asistente continúa erróneamente sobre ai-project; el propio estudiante aclaró posteriormente que Repository 1 correspondía a Aouad, Lykouris & Zhong, issue #6.]
+El objetivo académico sigue siendo estudiar cómo los instrumentos de política monetaria, a través de la liquidez bancaria, el mercado interbancario y las restricciones de colateral, afectan el crédito y la asignación de capital entre empresas heterogéneas.
+
+1. Estado verificado del repositorio
+Componente
+
+Situación al 21 de noviembre
+
+Formalización Lean
+
+Compilación satisfactoria el 15 de noviembre, con auditoría de axiomas de las declaraciones seleccionadas.
+
+Simulaciones y LaTeX
+
+Workflows build y editorial-qa satisfactorios el 18 de noviembre.
+
+Artículo
+
+Cuerpo compacto de 9 páginas y anexos técnicos. Revisión científica final pendiente.
+
+Correspondencia Lean–paper
+
+Parcial. No todos los 57 resultados inventariados tienen una demostración Lean de idéntico alcance.
+
+Equilibrio dinámico completo
+
+No demostrado. Los resultados numéricos corresponden al sistema reducido.
+
+Apéndice manuscrito
+
+Existe una guía de derivación, pero faltan las derivaciones manuscritas del autor.
+
+Integración final
+
+main todavía no incorpora el trabajo completo. El PR #2 permanece como borrador.
+
+Las ejecuciones relevantes son Lean 4 — éxito y Build — éxito.
+
+2. Trabajo pendiente, por orden de prioridad
+1. Cerrar la correspondencia matemática SOURCE–Python. Identificar exactamente las 33 ecuaciones, sus transformaciones y las condiciones que permitirían certificar una raíz del sistema original. No confundir una solución numérica con la demostración de existencia del equilibrio.
+
+2. Auditar las proposiciones del artículo. Distinguir cuáles están demostradas en Lean, cuáles se comprueban numéricamente y cuáles dependen de hipótesis adicionales o permanecen abiertas.
+
+3. Consolidar el modelo monetario. Mantener diferenciadas remuneración de reservas, encaje, cantidad de reservas y corredor de tasas. Actualmente la IRF principal corresponde a la remuneración; no hay cuatro experimentos dinámicos equivalentes certificados.
+
+4. Completar los entregables académicos. Revisar bibliografía, pruebas, figuras, diapositivas, código reproducible y apéndice manuscrito, manteniendo las afirmaciones dentro del alcance efectivamente demostrado.
+
+5. Cerrar la integración. Trabajar sobre la rama de desarrollo vigente, ejecutar las verificaciones necesarias en GitHub Actions y fusionar únicamente una versión auditada a main.
+
+3. Punto exacto de continuación
+RAMA DE TRABAJO MÁS RECIENTE
+
+work/lean-ci-validation-source-33-row-20261114
+
+COMMIT OBSERVADO
+
+c52cabde53e67a6a70500b52318c0f1fe84f42f7
+
+La prioridad inmediata es resolver o delimitar rigurosamente la brecha de correspondencia entre el sistema económico SOURCE y las 33 ecuaciones implementadas en Python, antes de afirmar nuevos teoremas de equilibrio.
+
+He completado esta primera auditoría sin modificar archivos, iniciar compilaciones innecesarias ni fusionar ramas.
+
+Una precisión: el mensaje recuperable de «repositorio_1» no identificaba expresamente el repositorio. He tomado ai-project como referencia porque coincide con el proyecto Lean de tu GitHub. Si «repositorio_1» correspondía a otra tarea, bastará con identificarla para cambiar el objetivo sin alterar este proyecto.
 
 ## 2. Revisión de la prueba escrita: interacciones copiadas por el estudiante
 
@@ -141,7 +285,7 @@ Por tanto, el relato de `ai-project` al inicio es un error de identificación du
 
 ## 4. Alcance y límites de esta transcripción
 
-Esta versión incorpora el **texto disponible copiado por el estudiante**, sin pretender que sea una exportación automática íntegra de los chats. Los tramos extensos de respuesta acerca de `ai-project` se indican como tales y **no se han copiado completos aquí**: por esa razón este archivo todavía no satisface una exigencia estricta de diálogo íntegro sin ediciones. La evidencia del estudio de Aouad que fue compartida está recogida en la sección 2. Las conversaciones originales RP1–RP3 pueden incluir intercambios que no están en el bloque facilitado. No se inventan mensajes para llenar huecos.
+Esta versión incorpora el **texto disponible copiado por el estudiante**, sin pretender que sea una exportación automática íntegra de los chats. Los dos tramos extensos de respuesta acerca de `ai-project`, que anteriormente estaban abreviados por este asistente, han sido repuestos a partir de lo que copió el estudiante. Aun así, **este archivo no es una exportación íntegra de los chats RP1–RP3** y algunas expresiones matemáticas originalmente pegadas fueron normalizadas para lectura; no afirmar integridad literal estricta. La evidencia del estudio de Aouad que fue compartida está recogida en la sección 2. Las conversaciones originales RP1–RP3 pueden incluir intercambios que no están en el bloque facilitado. No se inventan mensajes para llenar huecos.
 
 Documentación complementaria: [revisión del manuscrito](docs/REVIEW_IPAD_PDF.md), [formalización](docs/LEAN_FORMAL_SCOPE.md), [extractos originales aportados](docs/EXTRACTOS_RP3_APORTADOS.md).
 
