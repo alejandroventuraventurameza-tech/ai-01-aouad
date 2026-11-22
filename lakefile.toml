@@ -1,0 +1,11 @@
+name = "aouad"
+version = "0.1.0"
+defaultTargets = ["Aouad"]
+
+[[lean_lib]]
+name = "Aouad"
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "v4.34.0"
