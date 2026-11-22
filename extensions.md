@@ -1,53 +1,25 @@
-# Extensions — what could be relaxed, and what is already taken
+# Version-aware extension audit — avoid false novelty claims
 
-The paper names its own assumptions in a block just before §1.2, and lists
-exactly three: **substitutability/additivity**, **linear cost**, and **myopic
-users**. That block is the natural starting point, but it needs checking against
-the appendices before anything is claimed to be open.
+**Assigned paper:** [arXiv:2605.11350v1](https://arxiv.org/pdf/2605.11350v1) (12 May 2026).  
+**Later version:** [arXiv:2605.11350v2](https://arxiv.org/pdf/2605.11350v2) (17 October 2026).
 
-## Dead end: linear → convex cost
+This file replaces the instructor template's extension ideas with an updated source/version audit. The task in Issue #6 focuses on §2/Proposition 2.1; §§3–5 are reading-only.
 
-This is the first thing anyone suggests, including every LLM I asked. It is
-**already done**. Appendix D is titled *"Extension to convex cost functions
-(Remark 2.3)"* and redoes Sections 2, 3 and 4 under strictly convex $c(e)$, with
-Propositions D.3 and D.6.
+## Do not propose as new: strictly convex effort costs
 
-Proposing it as an extension is replication, and it is the clearest example in
-this course of why the appendices have to be read before an idea is called new.
+Even v1 already discusses extension of linear cost $c(e)=\gamma e$ to convex costs in Remark 2.3 and Appendix D. Calling convex effort costs an entirely new research direction would be a literature-check failure.
 
-**But there is a gap inside the gap.** Appendix D covers §§2–4. It does **not**
-cover §5. Convex cost applied to the skill-polarisation result is technically
-untouched — a narrow opening, but a real one.
+## Do not propose as new without a version qualifier: forward-looking effort
 
-## Live: myopia
+The **v1 worked example** emphasizes myopic users and calls forward-looking behavior a potential extension. **v2 explicitly treats forward-looking effort** (including a discounting/value-gap analysis), so the unqualified claim that myopia is never relaxed in the paper is **outdated**.
 
-The agent maximises **short-term** utility at each state: he chooses effort to
-maximise current output net of cost, ignoring that effort today changes skill
-tomorrow. The paper is explicit that this is a maintained assumption, and it is
-never relaxed anywhere — no discount factor, no forward-looking agent, nothing.
+## Other possible directions — hypotheses, not novelty claims
 
-A **two-period agent** who internalises the skill transition is the most tractable
-version: solve period 2 as the static problem already characterised, then period 1
-with the continuation value attached. The question worth asking is whether the
-deskilling result survives when the agent can see it coming.
+Task interdependence, learning spillovers and heterogeneous beliefs may be analytically interesting, but require a review of §1.2 and related papers before being classified as genuinely new. Here we record them only as **ideas requiring literature audit**, not as established research gaps.
 
-## Harder: complementarity inside $p(\cdot)$
+## Integrity rules
 
-The obvious move — add an interaction term between $s$ and $a$ — is partly
-pre-empted: §4.4 micro-founds AI unreliability as a negative interaction and §5.3
-micro-founds AI literacy as a positive one. So an extension has to change the
-**production primitive itself**, not bolt a term onto it. Harder to make
-tractable, and easier to end up with a model whose results are assumed rather
-than derived.
-
-## How to tell a real extension from a fake one
-
-Three questions, in order:
-
-1. **Is it in the appendices?** Check before anything else. This is where most
-   proposed extensions die.
-2. **Does one equation change, or all of them?** If relaxing the assumption
-   rewrites the whole model, it is a new paper, not an extension.
-3. **Can you say what you expect to happen?** If you cannot state the expected
-   direction of the result beforehand, you do not yet understand the mechanism
-   well enough to relax it.
+- Cite an explicit arXiv version and section when describing what authors did or did not study.
+- Verify appendix coverage *before* labeling an extension open.
+- Do not attribute the inherited template's prompt transcript, handwritten material or presentation to the student.
+- Do not confuse the static gross-output formula with the dynamic paradox results.
