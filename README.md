@@ -4,7 +4,7 @@
 **Assigned source:** [arXiv:2605.11350v1 (12 May 2026)](https://arxiv.org/pdf/2605.11350v1).  
 **Later revision:** [arXiv:2605.11350v2 (17 October 2026)](https://arxiv.org/pdf/2605.11350v2).
 
-> **DRAFT — PROVENANCE WARNING:** This repository was initialized from the [instructor's worked example](https://github.com/alexanderquispe/ai-01-aouad). The inherited prompts, handwriting, and presentation are **the instructor's example**, not the student's own evidence. This branch introduces new mathematical notes and an original presentation. Do not merge or submit until the student's original raw conversation and actual handwritten derivation are added and checked.
+> **DRAFT — PROVENANCE WARNING:** This repository was initialized from the [instructor's worked example](https://github.com/alexanderquispe/ai-01-aouad). The original instructor prompts and handwritten PDF have been removed from this branch; placeholders now mark the missing student evidence. The inherited paper/ and extra/ folders remain **instructor reference materials**, not student-authored work. An original Beamer source has been written, and its compiled PDF is being replaced. Do not merge or submit until the actual raw conversation and handwritten derivation are supplied and checked.
 
 ## Research question
 
@@ -52,10 +52,10 @@ No attempt is made here to reproduce the theorems of §§3–5. See [version-awa
 |---|---|
 | README with model and core result | Draft complete |
 | Independent typed proof (docs/) | Draft complete; not Lean-certified |
-| Raw student dialogue (prompts.md) | **Missing: inherited template transcript is not student-authored** |
-| Student's physical handwritten derivation (hand/) | **Missing: inherited images are not student-authored** |
-| Original Beamer presentation.tex and compiled presentation.pdf | In progress; inherited PDF must be replaced |
-| Optional Lean 4 proof | In progress; kernel status must be checked |
+| Raw student dialogue (prompts.md) | **Missing: file now contains an explicit authentic-export placeholder** |
+| Student's physical handwritten derivation (hand/) | **Missing: copied PDF removed; hand/README.md specifies the required work** |
+| Original Beamer presentation.tex and compiled presentation.pdf | **Source written; PDF compiled locally; GitHub Actions sync pending verification** |
+| Optional Lean 4 proof | **Conditional candidate submitted; CI and exact axiom status not yet confirmed** |
 | Branch → PR → merge / comment on Issue #6 | PR is draft; not submitted |
 
 ## Evidence rules
