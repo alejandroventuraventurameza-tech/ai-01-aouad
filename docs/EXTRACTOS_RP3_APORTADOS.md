@@ -2,7 +2,7 @@
 
 **Origen:** texto pegado por el estudiante en la conversación actual, 22 de noviembre de 2026.
 **Estado:** extractos literales seleccionados del texto recibido; **no** constituyen la exportación integral ni la conversación completa. No se reconstruyen intervenciones omitidas.
-**Ámbito:** Repository 1, Proposition 2.1. El material anterior sobre `ai-project` / issue #7 corresponde a otro proyecto y se excluye.
+**Ámbito:** Repository 1, Proposition 2.1. El bloque aportado comienza con una confusión del asistente entre `ai-project` / issue #7 y este proyecto. El estudiante la aclaró: es parte del historial de la interacción, no evidencia técnica del Repository 1.
 
 ## Intercambio 1
 
@@ -69,4 +69,4 @@
 
 ## Limitación de integridad
 
-El texto facilitado por el estudiante mezcla conversaciones distintas y no cubre todos los prompts ni todas las respuestas de RP1–RP3. Se respetan las citas anteriores sin atribuirles el estatus de transcript íntegro. `prompts.md` debe permanecer marcado como incompleto hasta obtener el registro completo o hasta que el docente confirme que una selección basta.
+El estudiante indicó expresamente que ya aportó todo el texto que tenía previsto copiar. La presente selección solo transcribe algunos fragmentos de ese bloque: **la selección incompleta es responsabilidad de esta incorporación al repositorio**, y no implica que el estudiante deba volver a proporcionar los mensajes. Se deben conservar tanto el episodio de confusión inicial como su aclaración posterior en cualquier registro integral.
