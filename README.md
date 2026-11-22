@@ -54,8 +54,8 @@ No attempt is made here to reproduce the theorems of §§3–5. See [version-awa
 | Independent typed proof (docs/) | Draft complete; not Lean-certified |
 | Raw student dialogue (prompts.md) | **Missing: file now contains an explicit authentic-export placeholder** |
 | Student's physical handwritten derivation (hand/) | **Missing: copied PDF removed; hand/README.md specifies the required work** |
-| Original Beamer presentation.tex and compiled presentation.pdf | **Source written; PDF compiled locally; GitHub Actions sync pending verification** |
-| Optional Lean 4 proof | **Conditional candidate submitted; CI and exact axiom status not yet confirmed** |
+| Original Beamer presentation.tex and compiled presentation.pdf | **Verified: GitHub Actions [run #44970668988](https://github.com/alejandroventuraventurameza-tech/ai-01-aouad/actions/runs/44970668988) compiled six slides and committed the PDF** |
+| Optional Lean 4 proof | **Six conditional results verified, including Jensen concavity bridge; [run #44970882111](https://github.com/alejandroventuraventurameza-tech/ai-01-aouad/actions/runs/44970882111) succeeded with no sorryAx. Existence/selection of $x^\star$ remains pending.** |
 | Branch → PR → merge / comment on Issue #6 | PR is draft; not submitted |
 
 ## Evidence rules
