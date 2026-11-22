@@ -38,6 +38,8 @@
 
 > Recuerda que tenemos que incorporar este chat tambien que estamos haciendo
 
+> Ok, sigue
+
 ## Respuestas y acciones del asistente (resumen editorial, NO citas literales)
 
 1. Recuperó el estado de Repository 1 (issue #6), Lean, PDF manuscrito, presentación y PR #1.
