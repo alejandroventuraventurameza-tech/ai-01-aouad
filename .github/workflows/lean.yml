@@ -13,6 +13,10 @@ on:
       - .github/workflows/lean.yml
   workflow_dispatch:
 
+concurrency:
+  group: aouad-lean-repository1
+  cancel-in-progress: true
+
 permissions:
   contents: read
 
